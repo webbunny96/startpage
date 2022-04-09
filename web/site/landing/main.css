@@ -1,0 +1,283 @@
+html,body{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 99vw;
+    height: 100vh;
+
+    margin: 0 auto;
+    color: #fff;
+
+    /* overflow-x: hidden; */
+
+    background: #354147;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    background: url(/img/HG.png) no-repeat;
+    background-size: 100% 40vh;
+
+    background-position-y: 0vh;
+    background-position-x: 50%;
+    z-index: 2;
+}
+
+main::after{    
+    content: "";
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+
+    background: url(/img/MG.png) no-repeat;
+    
+    background-position-y: 30vh;
+    background-size: 100% 80vh;
+    z-index: 0;
+}
+
+main::before{
+    content: "";
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: url(/img/BG\ Hero.png);
+    z-index: 0;
+}
+
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+header .logo{
+    height: 5vh;
+    width: auto;
+    margin: 10px;
+    filter: invert(1);
+}
+
+ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    display: flex;
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+}
+
+header .lang{
+    display: flex;
+    margin: 10px;
+}
+
+header .lang-icon{
+    display: flex;
+    height: 3vh;
+    width: auto;
+    margin: 0 10px;
+    filter: invert(1);
+}
+
+
+.folow-side{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    margin: 20px;
+    font-size: 20px;
+    top: 50%;
+}
+
+.folow-side img{
+    display: flex;
+    width: 20px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+
+.folow-side a:nth-child(2){
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.folow-side span{
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+
+.scroll-indicator {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    right: 0;
+    z-index: 10;
+    margin: 20px;
+    top: 50%;
+}
+
+.indicator{
+    display: flex;
+    border-right: 1px solid rgba(255, 255, 255, 0.7);
+    transition: 1s;
+    cursor: pointer;
+}
+
+.indicator:nth-child(1){
+    border-right: none;
+}
+
+.indicator.active{
+    border-right: 4px solid rgba(255, 255, 255, 1);
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 1;
+    padding: 10px;
+}
+
+section h1{
+    font-size: 30px;
+}
+
+section p{
+    width: 40vw;
+    margin: 20px;
+    padding: 10px;
+}
+
+figure.line{
+    display: flex;
+    width: 50px;
+    height: 1px;
+    background: #FBD784;
+}
+
+section h4{
+    display: flex;
+    justify-content: flex-start;
+    color: #FBD784;
+    padding: 10px;
+}
+
+section img{
+    z-index: 1;
+    margin: 20px;
+    box-shadow: 5px 5px 20px #000;
+    height: 70%;
+}
+
+.start-section{
+    background: url(./img/VG.png) no-repeat;
+    background-position-y: 30vh;
+    height: 100vh;
+    flex-wrap: wrap-reverse;
+}
+
+.start-section::after{
+    content: "";
+    display: flex;
+    position: absolute;
+    bottom: -25vh;
+    width: 100%;
+    height: 30vw;
+    background: linear-gradient(0deg, rgba(53,65,71,1) 0%, rgba(53,65,71,1) 38%, rgba(53,65,71,0) 100%);
+    z-index: 0;
+}
+
+.first-section{
+    flex-wrap: wrap-reverse;
+    margin-top: 150px;
+    opacity: 0;
+    transform: translateX(-150px);
+    transition: transform 4s, opacity 4s;
+}
+
+.second-section{
+    flex-wrap: wrap;
+    opacity: 0;
+    transition: opacity 4s;
+
+}
+
+.third-section{
+    flex-wrap: wrap-reverse;
+    margin-top: 150px;
+    overflow-y: hidden;
+    opacity: 0;
+    transform: translateX(150px);
+    transition: transform 4s, opacity 4s;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+footer ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+footer .first-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .second-block span{
+    align-self: flex-end;
+}
+
+footer .second-block h3, footer .third-block h3{
+    color: #FBD784;
+}
+
+.__active{
+    opacity: 1;
+    transform: translate(0px) rotate(0deg) scale(1) perspective(0px);
+}

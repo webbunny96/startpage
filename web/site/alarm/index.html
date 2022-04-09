@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Alarm</title>
+  </head>
+  <body>
+    <main>
+      <div class="clock" id="clock"></div>
+      <div class="date" id="date"></div>      
+      
+      <div class="alarmBlock">
+        <div class="alarmList">
+          <div class="alarm" id="alarm alarm1">
+            <div class="alarmHeader">
+              <h3 class="alarmNum">Alarm 1</h3>
+              <span class="alarmName">Name</span>
+              <div class="on(off)">
+                <input type="checkbox" id="alarmTriger" />
+                <label class="newCheckbox" for="alarmTriger">
+                  <figure class="circle"></figure>
+                </label>
+              </div>
+            </div>
+            <div class="alarmBody">
+              <div class="setTime">
+                <span class="hh"></span>07<span>:</span
+                ><span class="mm">00</span>
+              </div>
+              <div class="setDay"><p>Пн Вт Ср Чт Пт</p></div>
+            </div>
+            <div class="alarmFooter">
+              <p class="timeToSleep">Через 8 часов 23 минуты</p>
+            </div>
+          </div>
+        </div>
+        <button class="alarmAdd">+</button>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="main.js"></script>
+    <script src="clock.js"></script>
+  </body>
+</html>
