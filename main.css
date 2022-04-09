@@ -106,10 +106,11 @@ a {
 	position: fixed;
 	justify-content: center;
 	align-items: center;
-	background: #f00;
+	background: url(./img/up-arrow.png);
 	top: 80vh;
 	right: 20vw;
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
+	border: 1px solid #000;
 }
