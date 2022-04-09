@@ -36,6 +36,7 @@ function mTsetLang(e) {
       })
   })
 }
+
         // get cookie script
 function setCookie(name, value, days) {
 	if (days) {
