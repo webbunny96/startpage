@@ -1,0 +1,123 @@
+header .lang-box {
+	margin-right: 50px;
+	position: relative;
+
+	height: 50%;
+	width: 10vw;
+
+	margin: 0;
+	padding: 0;
+	border-radius: 5px;
+	background: #fff;
+}
+
+header .lang-box ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	height: 100%;
+	width: 100%;
+
+	overflow: hidden;
+
+	transition: 1s;
+
+	border-radius: 5px;
+
+	background: #fff;
+}
+
+header .lang-box .lang-list {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	transition: 1s;
+}
+
+header .lang-box .lang-list::after {
+	content: '▼';
+
+	position: absolute;
+	right: 15px;
+	top: 0;
+	width: 10%;
+	height: 100%;
+
+	transform: rotate(90deg);
+
+	transition: 1s;
+
+	font-weight: bold;
+	color: var(--heder-font-color);
+	z-index: 10;
+}
+
+header .lang-box li {
+	display: flex;
+	align-items: center;
+
+	height: 100%;
+	width: 100%;
+
+	padding: 0;
+	margin-top: 15px;
+	margin-left: -10px;
+
+	background: none;
+
+	margin: 0;
+	padding: 0 10px;
+}
+
+header .lang-box li a {
+	display: flex;
+	align-items: center;
+
+	height: 100%;
+}
+
+header .lang-box li img {
+	height: 60%;
+
+
+	border-radius: 50%;
+
+	margin: 0;
+	margin-right: 10px;
+}
+
+header #langList {
+	opacity: 0;
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+header .lang-box #langList:checked ~ .lang-list ul li {
+	height: 50px;
+}
+
+header .lang-box #langList:checked ~ .lang-list ul {
+	height: 150px;
+}
+
+header .lang-box #langList:checked ~ .lang-list::after {
+	transform: rotate(0deg);
+}
+
+@media (max-device-width: 768px) {
+	header ul.menu li.lang-list-point{
+		width: 50vw;
+		height: 5vh;
+	}
+
+	header .lang-box{
+		height: 100%;
+	}
+}

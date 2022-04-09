@@ -1,0 +1,4 @@
+*#__active.__active{
+    opacity: 1;
+    transform: translate(0px) rotate(0deg) scale(1) perspective(0px);
+}
