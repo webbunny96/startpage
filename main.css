@@ -106,7 +106,7 @@ a {
 	position: fixed;
 	justify-content: center;
 	align-items: center;
-	background: url(./img/up-arrow.png);
+	background: url(/img/up-arrow.png);
 	top: 80vh;
 	right: 20vw;
 	width: 30px;
