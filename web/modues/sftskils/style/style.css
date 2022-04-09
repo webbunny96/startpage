@@ -1,0 +1,66 @@
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul{
+  display: flex;
+  position: relative;
+  background: red;
+  margin: 3px;
+  margin-top: 10%;
+  height: 10vh;
+  padding: 10px;
+}
+
+li{
+  left: 0;
+  align-self: flex-end;
+  list-style: none;
+  background: yellow;
+  margin: 0;
+  font-size: 14px;
+  height: 16px;
+}
+
+.base-line{
+  position: absolute;
+  align-self: center;
+  left: 0;
+  width: 98%;
+  height: 1px;
+  background: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.con-line{
+  position: absolute;
+  background: #000;
+  margin: 0;
+  height: 1px;
+  width: 60px;
+  transform-origin: left center;
+  transform: rotate(90deg);
+}
+
+.elem0{
+  background: white;
+}
+
+.elem1{
+  background: blue;
+}
+
+.elem2{
+  background: green;
+}
+
+.point{
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
