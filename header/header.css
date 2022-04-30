@@ -146,3 +146,34 @@ header .menu > li:last-child:hover{
 		margin: 0 5%;
 	}
 }
+
+
+@media (max-device-width: 1200px) {
+	header{
+		height: 5vh;
+	}
+
+	header .logo{
+		height: 5vh;
+	}
+
+	header li.burger-point{
+		height: 50px;
+	}
+
+	header nav > ul{
+		height: 50px;
+	}
+
+	header h1{
+		font-size: 35px;
+	}
+
+	body header nav > div {
+		width: 65%;		
+	}
+
+	header nav {
+		margin: 0 5%;
+	}
+}

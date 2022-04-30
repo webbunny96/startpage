@@ -1,14 +1,24 @@
+header ul li.lang-list-point{
+	display: flex;
+	align-self: flex-start ;
+	height: 38px;
+	width: 15%;
+	padding: 0;
+	margin-right: 2%;
+}
+
 header .lang-box {
 	margin-right: 50px;
 	position: relative;
 
-	height: 50%;
-	width: 10vw;
+	height: 100%;
+	width: 100%;
 
 	margin: 0;
 	padding: 0;
 	border-radius: 5px;
 	background: #fff;
+	overflow: hidden;
 }
 
 header .lang-box ul {
@@ -17,7 +27,7 @@ header .lang-box ul {
 	flex-wrap: wrap;
 
 	height: 100%;
-	width: 100%;
+	width: 80%;
 
 	overflow: hidden;
 
@@ -36,16 +46,17 @@ header .lang-box .lang-list {
 	margin: 0;
 	padding: 0;
 	transition: 1s;
+	overflow: hidden;
 }
 
 header .lang-box .lang-list::after {
 	content: '▼';
 
 	position: absolute;
-	right: 15px;
-	top: 0;
-	width: 10%;
-	height: 100%;
+	top: 10px;
+	right: 20px;
+	width: 25px;
+	height: 25px;
 
 	transform: rotate(90deg);
 
@@ -76,7 +87,7 @@ header .lang-box li {
 header .lang-box li a {
 	display: flex;
 	align-items: center;
-
+	justify-content: flex-start;
 	height: 100%;
 }
 
@@ -99,16 +110,17 @@ header #langList {
 	border: none;
 }
 
-header .lang-box #langList:checked ~ .lang-list ul li {
-	height: 50px;
-}
+ header #langList:checked ~ ul li.lang-list-point {
+	height: 100%;
+	align-self: flex-start;
+} 
 
-header .lang-box #langList:checked ~ .lang-list ul {
-	height: 150px;
-}
-
-header .lang-box #langList:checked ~ .lang-list::after {
+header #langList:checked ~ ul .lang-box .lang-list::after {
 	transform: rotate(0deg);
+}
+
+header #langList:checked ~ ul .lang-box li{
+	height: 50%;
 }
 
 @media (max-device-width: 768px) {
@@ -119,5 +131,46 @@ header .lang-box #langList:checked ~ .lang-list::after {
 
 	header .lang-box{
 		height: 100%;
+	}
+
+	header .lang-box li a {
+		align-items: center;
+		justify-content: center;
+	}
+
+	header .lang-box .lang-list ul{
+		padding: 0;
+		justify-content: space-around;
+		width: 100%;
+	}
+
+	header .lang-box .lang-list ul li{
+		width: 40%;
+	}
+}
+
+@media (max-device-width: 1200px) {
+	header ul.menu li.lang-list-point{
+		width: 50vw;
+		height: 5vh;
+	}
+
+	header .lang-box{
+		height: 100%;
+	}
+
+	header .lang-box li a {
+		align-items: center;
+		justify-content: center;
+	}
+
+	header .lang-box .lang-list ul{
+		padding: 0;
+		justify-content: space-around;
+		width: 100%;
+	}
+
+	header .lang-box .lang-list ul li{
+		width: 40%;
 	}
 }

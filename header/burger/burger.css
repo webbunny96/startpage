@@ -4,6 +4,7 @@ header li.burger-point {
 	height: 50px;
 	justify-content: center;
 	align-items: center;
+	background: rgba(240, 240, 240, 0.1);
 }
 
 header .menu li .burger-button {
@@ -23,14 +24,19 @@ header .menu li .burger-button {
 	width: 100%;
 	height: 66px;
 	justify-content: center;
+	cursor: pointer;
 
 	align-items: center;
 
-	background: rgba(240, 240, 240, 0);
+	background: rgba(240, 240, 240, 0.1);
 }
 
 header .menu li.burger-point.active {
-	background: rgba(240, 240, 240, 1);
+	background: rgba(240, 240, 240, 0.1);
+}
+
+header .menu li .burger-button{
+	background: none;
 }
 
 .burger-button > span,
@@ -103,8 +109,14 @@ header .menu li.burger-point.active {
 }
 
 @media (max-width: 1200px) {
-	header .burger-button {
+	header .menu li .burger-button {
 		height: auto;
+		width: 100%;
+		height: 100%;
+	}
+
+	header #navList_toggle:checked ~ .menu li .burger-button {
+		height: 0%;
 	}
 
 	header li.burger-point {
@@ -138,6 +150,10 @@ header .menu li.burger-point.active {
 		width: 100%;
 		padding: 0;
 		margin: 0;
+	}
+
+	.lang-list-point{
+		overflow: hidden;
 	}
 
 	header .lang-box .lang-list::after {
@@ -185,6 +201,25 @@ header .menu li.burger-point.active {
 }
 
 @media (max-device-width: 768px) {
+	#navList_toggle:checked ~ ul.menu {
+		width: 100vw;
+		height: 80vh;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-row-gap: 30px;
+		justify-items: center;
+		align-content: flex-start;
+		align-items: flex-start;
+	}
+
+	ul.menu li{
+		width: 80%;
+		height: 50px;
+		font-size: 25px;
+	}
+}
+
+@media (max-device-width: 1200px) {
 	#navList_toggle:checked ~ ul.menu {
 		width: 100vw;
 		height: 80vh;

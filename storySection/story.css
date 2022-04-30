@@ -1,5 +1,5 @@
 .story{
-    flex-direction: column-reverse;
+    flex-direction: column;
     opacity: 0;
     z-index: 1;
 }

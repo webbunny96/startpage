@@ -51,11 +51,10 @@ section {
 	display: flex;
 	flex-direction: row;
 
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
 
 	width: 80%;
-	min-height: 75vh;
 }
 
 li {
