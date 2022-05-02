@@ -108,12 +108,20 @@ a {
 	background: url(./img/up-arrow.png) no-repeat;
 	background-size: 70%;
 	background-position: center;
-	top: 80vh;
-	right: 20vw;
+	top: 120vh;
+	right: 10vw;
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
 	border: 1px solid #000;
+	transition: 2s;
+	opacity: 0;
+	z-index: 20;
+}
+
+.__active.go-up-btn {
+	top: 90vh;
+	opacity: 1;
 }
 
 .go-up-btn a{

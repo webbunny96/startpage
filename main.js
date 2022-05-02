@@ -75,7 +75,3 @@ if (domElems.length > 0) {
         elem['idList'] = idList;
     });
 }
-
-const goGoBtn = document.querySelector(".go-up-btn");
-goGoBtn.addEventListener();
-// console.log(ruText);// lang

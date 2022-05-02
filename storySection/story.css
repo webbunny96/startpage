@@ -31,6 +31,8 @@
     opacity: 0;
     transform: translateY(10%);
     transition: transform 3s, opacity 4s;
+    
+    margin-bottom: 50px;
  }
 
 @media (max-device-width: 768px) {

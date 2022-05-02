@@ -11,6 +11,7 @@ function offset(el) {
 if (animIteams.length > 0) { // animIteams have elem
   window.addEventListener("scroll",()=>{ // add event listener on scroll
     onScroll();
+    showGTUBtn();
   }); 
   // Animation function on scroll
   function animOnScroll(elem) {
@@ -54,4 +55,16 @@ if (animIteams.length > 0) { // animIteams have elem
    setTimeout(() => { // animation delay
     onScroll();
    }, 300);
+}
+
+
+//go-to-up-btn show
+function showGTUBtn(){
+      const animIteamOffset = offset(document.querySelector(".go-up-btn")).top; // get top position elem
+    if (760 < animIteamOffset) {
+      document.querySelector(".go-up-btn").classList.add("__active");
+    }
+    if(750 > animIteamOffset) {
+      document.querySelector(".go-up-btn").classList.remove("__active");
+    }
 }

@@ -1,3 +1,5 @@
+
+
 let ukrNav = {
     "aboutMe": "Про мене",
     "eduction": "Освіта",
@@ -8,7 +10,7 @@ let ukrNav = {
 
 let ukrStory = {
     "h2": "Front-End Розробник",
-    "p": 'Привіт, мене звати Максим.  Я молодий, досвідчений, прогресивний веб-розробник.  Мені подобається цікаві, не стандартні проекти.  Працюючи зі мною ми створимо красивий, інтерактивний сайт, який приверне увагу нових клієнтів для вашої компанії або не хворого бізнесу. Я завжди готовий допомогти порадою та цікавою ідеєю.Мій девіз "Неможливе робіть можливим, можливе легким, а легке елегантним."  — Моше Фельденкрайз, а знання різних бібліотек та сервісів для адаптивної та оптимізованої верстки допоможуть мені в цьому.  Я б дуже хотів працювати над вашим особливим і дуже цікавим проектом.'
+    "p": 'Мене звуть Максим. Займаюся розробкою та програмуванням понад 5 років. За весь цей час виробив уміння швидко та якісно писати код, а знання великої кількості бібліотек дає мені можливість написання багатофункціональних та оптимізованих додатків та сервісів, які зручні та прості у використанні, що привабить велику кількість людей до вашої продукції.'
 }
 
 let ukrSoftSkil = {
@@ -43,7 +45,7 @@ let enNav = {
 
 let enStory = {
     "h2": "Front-End Developer",
-    "p": 'Hi, my name is Maxim.  I am a young, experienced, progressive Web developer.  I like interesting, non-standard projects.  Working with me, we will create a beautiful, interactive website that will attract the attention of new clients for your company or not sick business. I am always ready to help with advice and an interesting idea.My motto is "Make the impossible possible, the possible easy, and the easy elegant."  - Moshe Feldenkrais, and knowledge of different libraries and services for adaptive and optimized layout will help me with this.  I would really like to work on your special and very interesting project.'
+    "p": 'My name is Max. I have been developing and programming for over 5 years. During all this time, I have developed the ability to write code quickly and efficiently, and the knowledge of a large number of libraries gives me the opportunity to write multifunctional and optimized applications and services that are convenient and easy to use, which will attract a large number of people to your products.'
 }
 
 let enSoftSkil = {
@@ -68,61 +70,65 @@ let enCopyright = {
     "second":"All rights reserved 2022"
 }
 
-let rusNav = {
-    "aboutMe": "Обо мне",
-    "eduction": "Образование",
-    "works": "Работы",
-    "contacts": "Контакти",
-    "price": "Прайс"
-}
-
-let rusStory = {
-    "h2": "Front-End разроботчик",
-    "p": 'Привет меня зовут Максим. Я молодой, опытный, прогрессивный Web разработчик. Мне нравятся интересные,  не стандартные проекты. Работая со мной мы создадим красивый,  интерактивный сайт который привлечет внимание новых клиентов для вашей компании или не больного бизнеса.Я всегда готов помочь советом и интересной идеей.Мой девиз "Невозможное делайте возможным, возможное — лёгким, а лёгкое — элегантным." —  Моше Фельденкрайз, а знания разных библиотек и сервисов для адаптивной и оптимизированной верстки помогут мне в этом. Я бы очень хотел по работать над вашим особенным и очень интересным проектом.'
-}
-
-let rusSoftSkil = {
-    "timeManagment":"Time managment",
-    "continuousLearning":"Continuous learning",
-    "emotionalIntelligence":"Emotional intelligence",
-    "adaptability":"Adaptability",
-    "collaborationTeamwork":"Collaboration & Teamwork",
-    "resilienceCuriosity":"Resilience, Curiosity",
-    "coachingMindset":"Coaching Mindset",
-    "projectManagement":"Project Management",
-    "crativity":"Crativity",
-    "criticalThinking":"Critical Thinking & Problem Solving"
-}
-
-let rusWorks = {
-    "works": "Работы"
-}
-
-let rusCopyright = {
-    "first":"Все права защищены 2022",
-    "second":"Все права защищены 2022"
-}
-
-
 
 const setLanguageButton = document.querySelectorAll(".langBtn");
 
-const navIteam = document.querySelectorAll("header .menu li");
+const navIteam = document.querySelectorAll("header .menu li a");
 
 const sectionIteam = document.querySelectorAll("section");
 
 setLanguageButton.forEach((elem)=>{
-    elem.addEventListener("click", ()=>{
+    elem.addEventListener("click", (e)=>{
         setLanguage(elem.id);
+       // e.classList.add("_active");
     });
-
 });
 
-function setLanguage(lang){
-    navIteam.forEach((elm)=>{
-        console.log(elm);
-    });
-    console.log(lang);
+function setLanguage(lang = "en"){
+    if(lang == "en"){
+        //nav
+  //nav
+        document.querySelector("a.aboutMe").innerHTML = enNav.aboutMe;
+        document.querySelector("a.works").innerHTML = enNav.works;
+        document.querySelector("a.contacts").innerHTML = enNav.contacts;
+        document.querySelector("a.price").innerHTML = enNav.price;
+        
+        //other all
+        document.querySelector(".story-h").innerHTML = enStory.h2;
+        document.querySelector(".story-text").innerHTML = enStory.p;
+        document.querySelector(".works-h").innerHTML = enWorks.works;
+        document.querySelector(".copyright-info-first").innerHTML = enCopyright.first;
+        document.querySelector(".copyright-info-second").innerHTML = enCopyright.second;
+     }
+
+    if(lang == "ukr"){
+        //nav
+        document.querySelector("a.aboutMe").innerHTML = ukrNav.aboutMe;
+        document.querySelector("a.works").innerHTML = ukrNav.works;
+        document.querySelector("a.contacts").innerHTML = ukrNav.contacts;
+        document.querySelector("a.price").innerHTML = ukrNav.price;
+        
+        //other all
+        document.querySelector(".story-h").innerHTML = ukrStory.h2;
+        document.querySelector(".story-text").innerHTML = ukrStory.p;
+        document.querySelector(".works-h").innerHTML = ukrWorks.works;
+        document.querySelector(".copyright-info-first").innerHTML = ukrCopyright.first;
+        document.querySelector(".copyright-info-second").innerHTML = ukrCopyright.second;
+    }
 }
 
-//setLanguage("rus");
+setLanguage();
+
+
+/*
+
+    navIteam.forEach((elm)=>{
+        if(elm.classList != "langBtn"){//enNav 
+            if(lang = "en"){
+                elm.innerHTML = enNav
+
+            }
+            console.log();
+        };
+          });
+*/

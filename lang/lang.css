@@ -84,6 +84,10 @@ header .lang-box li {
 	padding: 0 10px;
 }
 
+header .lang-box li._active{
+	order: 0;
+}
+
 header .lang-box li a {
 	display: flex;
 	align-items: center;
