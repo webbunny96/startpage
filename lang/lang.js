@@ -80,7 +80,14 @@ const sectionIteam = document.querySelectorAll("section");
 setLanguageButton.forEach((elem)=>{
     elem.addEventListener("click", (e)=>{
         setLanguage(elem.id);
-       // e.classList.add("_active");
+        if(e.target.parentNode.id=="en"){
+            document.getElementsByClassName('langBtnEn')[0].style= "order: 0";
+            document.getElementsByClassName('langBtnUkr')[0].style= "order: 1";
+        }
+        if(e.target.parentNode.id=="ukr"){
+            document.getElementsByClassName('langBtnUkr')[0].style= "order: 0";
+            document.getElementsByClassName('langBtnEn')[0].style= "order: 1";
+        }
     });
 });
 
@@ -116,6 +123,14 @@ function setLanguage(lang = "en"){
         document.querySelector(".copyright-info-second").innerHTML = ukrCopyright.second;
     }
 }
+
+// function chengeLangNum(){
+
+// }
+
+document.getElementsByClassName('langBtnEn')[0].style= "order: 0";
+document.getElementsByClassName('langBtnUkr')[0].style= "order: 1";
+
 
 setLanguage();
 

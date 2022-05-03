@@ -178,3 +178,12 @@ header #langList:checked ~ ul .lang-box li{
 		width: 40%;
 	}
 }
+
+.langBtnEn{
+	order: 0;
+}
+
+.langBtnUkr{
+	order: 1;
+}
+
