@@ -116,7 +116,7 @@ main {
       rgba(0, 0, 0, 0.6) 7%,
       rgba(0, 0, 0, 0) 22.13%
     ),
-    url(/img/Rectangle\ 1.png) no-repeat, #000000;
+    url(./img/Rectangle\ 1.png) no-repeat, #000000;
   background-size: 100%;
 }
 
