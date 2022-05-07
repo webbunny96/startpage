@@ -180,6 +180,7 @@
 
 @media (max-device-width: 768px){
 				.soft-skils li{
+                    transition: all 0s;
 				  font-size: 10px;
 				}
 				

@@ -12,6 +12,12 @@
 
 @import './footer/footer.css';
 
+:root {
+	--main-anim-time: 2s;
+	--second-anim-time: 4s;
+	--third-anim-time: 6s;
+}
+
 html {
 	display: flex;
 
