@@ -1,5 +1,33 @@
+//add id list on all elements
+const domElems = document.querySelectorAll("*");
+if (domElems.length > 0) {
+    domElems.forEach((elem) =>{
+        let idList = {
+            add: function add(id){
+                if(!elem.id.includes(id)){
+                    if (elem.id == "") {
+                        elem.id = id;   
+                    }else{
+                        elem.id = elem.id + " " + id;
+                    }
+                };
+            },
+            remove: function remove(id){
+                if(elem.id.includes(id)){
+                    if (elem.id != id) {
+                        elem.id = elem.id.replace(" " + id, "");
+                    }else{
+                        elem.id = elem.id.replace(id, "");   
+                    }
+                };   
+            }
+        }
+        elem['idList'] = idList;
+    });
+}
+
 /*Link scroll */
-document.querySelectorAll('a[href=^"#"]').forEach(link => {
+document.querySelectorAll('a[href="#"]').forEach(link => {
 
     link.addEventListener('click', (e) =>{
         e.preventDefault();
@@ -38,8 +66,9 @@ function offset(el) {
 if (animIteams.length > 0) { // animIteams have elem
   window.addEventListener("scroll",()=>{ // add event listener on scroll
     onScroll();
-    showGTUBtn();
+    // showGTUBtn();
   }); 
+  
   // Animation function on scroll
   function animOnScroll(elem) {
       elem.style.marginTop = scrollY  * -0.5 + "px"; //element go margin top on scroll
@@ -47,7 +76,7 @@ if (animIteams.length > 0) { // animIteams have elem
 
     // Animation function on scroll
     function animOnScrollScale(elem) {
-        elem.style.transform = "scale(" + scrollY  / 100 + ")"; //element go margin top on scroll
+        elem.style.transform = "scale(" + scrollY  / 1000 + ")"; //element go margin top on scroll
         console.log(scrollY);
     }
 
