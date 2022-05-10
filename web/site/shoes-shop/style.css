@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #f9f6f1;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header, nav{
+    display: flex;
+    width: 100%;
+}
+
+header{
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+button{
+    border: none;
+    color: #fff;
+    border-radius: 0;
+    padding: 10px;
+    background: #D7B399;
+}
+
+nav > ul{
+    display: flex;
+    width: 35%;
+    justify-content: flex-end;
+}
+
+nav > ul > li {
+    margin: 35px;
+}
+
+li{
+    list-style: none;
+}
+
+.hide-menu{
+    display: none;
+}
+
+nav picture{
+    display: flex;
+    align-self: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 200px;
+}
+
+nav div{
+    display: flex;
+    height: 100%;
+}
+
+nav a{
+    margin: 35px;
+}
+
+.basket{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+
+.basket picture{
+    width: 30px;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.basket-counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 20px;
+    color: #fff;
+    background: url("./img/Group\ 7.png") no-repeat;
+    background-size: 100%;
+}
+
+.slider{
+    width: 70%;
+}
+
+.seils{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.seils div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.seils picture{
+    width: 550px;
+}
+
+.seils h3{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 37px;
+    letter-spacing: 0.02em;
+    white-space: nowrap
+}
+
+.seils h2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 67px;
+    letter-spacing: 0.04em;
+    white-space: nowrap
+}
+
+.price{
+    position: absolute;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 29px;
+    text-align: right;
+    letter-spacing: 0.05em;
+    text-decoration-line: line-through;
+    text-transform: uppercase;
+    right: 5%;
+    top:20%;
+}
+
+.price-c{
+    position: absolute;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 51px;
+    text-align: right;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #D84033;
+    right: 7%;
+    top: 27%;
+}
+
+.black-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 235px;
+    color: #fff;
+    background: #000;
+}
+
+.colections{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.black-block h3{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+ h3 span{
+    font-weight: 400;
+}
+
+.black-block p{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 21px;
+    line-height: 26px;
+}
+
+.colection-block{
+    display: flex;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.colection-block button{
+    width: 80px;
+    height: 30px;
+}
+
+.colection-block p{
+    margin: 40px 0;
+}
+
+.colection-block picture{
+    width: 190px;
+    height: auto;
+    margin: 0 20px;
+}
+
+.women-block{
+    justify-content: flex-start;
+    background: #F4F4F4;
+}
+
+.men-block{
+    justify-content: flex-end;
+    background:  #F5F5DC;
+}
+
+.products{
+    display: flex;
+    width: 1110px; 
+    background: #F4F4F4;
+}
+
+.product{
+    width: 277px;
+    height: 236px;
+    background: red;
+}
