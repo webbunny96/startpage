@@ -11,15 +11,17 @@
 
 body{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   background: var(--clr);
 }
 
+main{
+  display: flex;
+}
+
 .navigation {
-  width: 400px;
-  height: 70px;
+  --size-navBar: 400px;
+  width: var(--size-navBar);
+  height: calc(var(--size-navbar) * 5,714);
   background: #fff;
   position: relative;
   display: flex;
