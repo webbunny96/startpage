@@ -113,7 +113,7 @@ function setLanguage(lang = "en"){
         document.querySelector("a.aboutMe").innerHTML = ukrNav.aboutMe;
         document.querySelector("a.works").innerHTML = ukrNav.works;
         document.querySelector("a.contacts").innerHTML = ukrNav.contacts;
-        document.querySelector("a.price").innerHTML = ukrNav.price;
+      //  document.querySelector("a.price").innerHTML = ukrNav.price;
         
         //other all
         document.querySelector(".story-h").innerHTML = ukrStory.h2;
