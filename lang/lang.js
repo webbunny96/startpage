@@ -98,7 +98,7 @@ function setLanguage(lang = "en"){
         document.querySelector("a.aboutMe").innerHTML = enNav.aboutMe;
         document.querySelector("a.works").innerHTML = enNav.works;
         document.querySelector("a.contacts").innerHTML = enNav.contacts;
-        document.querySelector("a.price").innerHTML = enNav.price;
+       // document.querySelector("a.price").innerHTML = enNav.price;
         
         //other all
         document.querySelector(".story-h").innerHTML = enStory.h2;
