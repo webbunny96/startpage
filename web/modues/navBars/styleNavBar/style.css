@@ -1,0 +1,119 @@
+.styleNavBar{
+    display: flex;
+    align-items: center;
+}
+
+.styleNavBar ul{
+    display: flex;
+    position: relative;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 10px;
+    
+    background: #fff;
+}
+
+.styleNavBar ul > li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+}
+
+.styleNavBar a{
+    text-decoration: none;
+    color: #000;
+}
+
+.styleNavBar ul > li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+} 
+
+.styleNavBar  .indicator{
+    display: flex;
+    position: absolute;
+    height: 50px;
+    width: 70px;
+    left: 15px;
+    background: #737373;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    transition: 1s;
+}
+
+.styleNavBar span{
+    position: absolute;
+    display: flex;
+    width: 90px;
+    height: 10px;
+    left: -10px;
+    background: #737373;
+}
+
+.styleNavBar span.top{
+    top: -10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.styleNavBar span.top::before{
+    content: "";
+    display: flex;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 10px;
+    height: 10px;
+    background: #2c2c2c;
+    border-radius: 100% 100% 0  0;
+}
+
+.styleNavBar span.top::after{
+    content: "";
+    display: flex;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 10px;
+    height: 10px;
+    background: #2c2c2c;
+    border-radius: 100% 100% 0  0;
+}
+
+.styleNavBar span.bottom{
+    bottom: -10px;
+    width: 70px;
+    left: 0;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+.styleNavBar  ul li:nth-child(1).active ~ .indicator {
+    transform: translateX(calc(100px * 0));
+}
+
+.styleNavBar  ul li:nth-child(2).active ~ .indicator {
+    transform: translateX(calc(100px * 1));
+}
+
+.styleNavBar  ul li:nth-child(3).active ~ .indicator {
+    transform: translateX(calc(100px * 2));
+}
+
+.styleNavBar  ul li:nth-child(4).active ~ .indicator {
+    transform: translateX(calc(100px * 3));
+}
+
+.styleNavBar  ul li:nth-child(5).active ~ .indicator {
+    transform: translateX(calc(100px * 4));
+}
+
+.styleNavBar  ul li:nth-child(6).active ~ .indicator {
+    transform: translateX(calc(100px * 5));
+}

@@ -21,11 +21,11 @@
     height: auto;
     margin: 5px;
     
-    background: rgb(196, 196, 196);
+    background: var(--main-color-html);
     border-radius: 5px;
 
     /* border: 5px solid #fff; */
-    box-shadow: 5px 5px 10px rgb(65, 65, 65);
+    box-shadow: 2px 2px 5px var(--work-title-color);
     
     opacity: 0;
     transform: translateY(20%);
@@ -39,6 +39,7 @@
 
 .works .tiles li h3{
     margin: 5px;
+    color: var(--main-colorB-tex);
 }
 
 .works .tiles img{

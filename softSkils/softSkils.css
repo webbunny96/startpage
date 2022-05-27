@@ -23,11 +23,15 @@
 
 .soft-skils ul.left-list{
     padding-left: var(--softskil-pos-pad);
+    
+    color: var(--main-colorB-text);
 }
 
 .soft-skils ul.right-list{
     align-items: flex-start;
     padding-right: var(--softskil-pos-pad);
+    
+    color: var(--main-colorB-text);
 }
 
 .soft-skils li{
@@ -39,6 +43,8 @@
     padding: 5px;
 
     border-radius: 5%;
+    
+    color: var(--main-colorB-text);
 }
 
 .soft-skils li:hover img{
@@ -49,11 +55,14 @@
 .soft-skils li:hover picture{
     width: 70px;
     height: 70px;
+    
+    color: var(--main-colorB-text);
 }
+
 .soft-skils li:hover{
     font-size: 18px;
 
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--sof-li-hover);
 }
 
 .soft-skils .center-list{
@@ -66,7 +75,7 @@
     background-size: 100%;
     border-radius: 50%;
 
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 5px 10px var(--sof-cet-shadow);
     transition: 0.5s;
     transform: scale(0.2);
     z-index: 2;
@@ -80,11 +89,14 @@
 .soft-skils li a{
     display: flex;
     align-items: center;
+    color: var(--main-colorB-text);
 }
 
 .soft-skils .left-list li:nth-child(1){
     margin-right: -4.5vw;
     transform: translate(80%, 80%);
+    
+    color: var(--main-colorB-text);
 }
 
 .soft-skils .left-list li:nth-child(2){

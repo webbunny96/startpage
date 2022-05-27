@@ -1,4 +1,5 @@
-const list = document.querySelectorAll(".list");
+let list = document.querySelectorAll(".list");
+
 function activeLink(){
   list.forEach((iteam)=>{
     iteam.classList.remove("active");
@@ -9,3 +10,4 @@ function activeLink(){
 list.forEach((iteam)=>{
   iteam.addEventListener("click", activeLink);
 });
+

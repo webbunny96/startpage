@@ -3,26 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./main.css">
-    <title>Modules</title>
+    <!-- styles -->
+    
+    <link rel="stylesheet" href="./navBars/floatingNavigator/style.css">
+    <link rel="stylesheet" href="./navBars/styleNavBar/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <!-- title  -->
+    <title>Patterns</title>
 </head>
 <body>
     <header>
-        
     </header>
     <main>
-        <div class="slider module mdl-navBars"></div>
-        <div class="slider module mdl-checkBox"></div>
-        <div class="slider module mdl-animations"></div>
-        <div class="slider module mdl-profiles"></div>
-        <div class="slider module mdl-loaders"></div>
-        <div class="slider module mdl-inputs"></div>
-        <div class="slider module mdl-forms"></div>
+        <div class="slider patternConteiner pat-navBars">
+            <div class="pattern floatingNavigator ">
+                <div class="navigation">
+                  <ul>
+                    <li class="list active">
+                      <a href="#">
+                        <span class="icon"
+                          ><ion-icon name="albums-outline"></ion-icon
+                        ></span>
+                        <span class="text">home</span>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#">
+                        <span class="icon"
+                          ><ion-icon name="accessibility-outline"></ion-icon
+                        ></span>
+                        <span class="text">profile</span>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#">
+                        <span class="icon"
+                          ><ion-icon name="at-circle-outline"></ion-icon
+                        ></span>
+                        <span class="text">contacts</span>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#">
+                        <span class="icon"
+                          ><ion-icon name="documents-outline"></ion-icon
+                        ></span>
+                        <span class="text">info</span>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#">
+                        <span class="icon"
+                          ><ion-icon name="documents-outline"></ion-icon
+                        ></span>
+                        <span class="text">test</span>
+                      </a>
+                    </li>
+                    <div class="indicator"></div>
+                  </ul>
+                </div>
+            </div>
+            <div class="pattern styleNavBar">
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Форум</a></li>
+                    <li><a href="#">Новости</a></li>
+                    <li><a href="#">Видео</a></li>
+                    <li><a href="#">Фото</a></li>
+                    <div class="indicator">
+                        <span class="top"></span>
+                        <span class="bottom"></span>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="slider patternConteiner pat-checkBox">
+            
+        </div>
+        <div class="slider patternConteiner pat-animations"></div>
+        <div class="slider patternConteiner pat-profiles"></div>
+        <div class="slider patternConteiner pat-loaders"></div>
+        <div class="slider patternConteiner pat-inputs"></div>
+        <div class="slider patternConteiner pat-forms"></div>
+        -->
     </main>
     <footer>
     </footer>
+
+    <!-- scripts -->
+    <script src="./navBars/floatingNavigator/main.js"></script>
+    <script src="./navBars/styleNavBar/main.js"></script>
     <script src="./main.js"></script>
-    <script src="./scripts/frames.js"></script>
+    <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
 </body>
 </html>

@@ -14,7 +14,7 @@ footer section{
     justify-content: space-between;
     align-items: center;
     
-    background: rgb(196, 196, 196);
+    background: var(--footer-bg-colr);
 
     border-radius: 0 0 5px 5px;
     

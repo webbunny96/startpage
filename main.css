@@ -16,6 +16,33 @@
 	--main-anim-time: 2s;
 	--second-anim-time: 4s;
 	--third-anim-time: 6s;
+
+	--main-color-html: rgb(196, 196, 196);
+
+	--main-color-body: rgb(240, 240, 240);
+	
+	--heder-font-color: rgb(114, 114, 114);
+
+	--li-active-color: rgb(80, 80, 80);
+
+	--main-colorB-text: #000;
+	--main-colorW-text: #fff;
+	--main-colorGt-text: rgb(83, 83, 83);
+	
+	--footer-bg-colr: rgb(196, 196, 196);
+	
+    --hexagon-color: rgb(170, 170, 170);
+
+	--burg-bg-color: rgba(240, 240, 240, 0.1);
+	--burg-line-color: #616161;
+	--navList-bg-color: rgba(196, 196, 196, 0.8);
+	--sof-li-hover: rgba(255, 255, 255, 0.7);
+	--sof-cet-shadow: rgba(0, 0, 0, 0.8);
+	--story-text-color: rgb(83, 83, 83);
+	--work-title-color: rgb(65, 65, 65);
+	--toUP-btn-color: rgba(255, 255, 255, 0);
+	--goUp-btn-shadoww: rgba(0, 200, 0, 0);
+	transition: 2s;
 }
 
 html {
@@ -23,7 +50,11 @@ html {
 
 	justify-content: center;
 
-	background: rgb(196, 196, 196);
+	background: var(--main-color-html);
+
+	transition: 2s;
+	
+    color: var(--main-colorB-tex);
 }
 
 body {
@@ -33,8 +64,8 @@ body {
 	width: 80vw;
 
 	border-radius: 5px;
-	background: rgb(240, 240, 240);
-	box-shadow: 0 0 20px #fff;
+	background: var(--main-color-body);
+	box-shadow: 0 0 20px var(--main-color-body);
 }
 
 main {
@@ -47,7 +78,7 @@ main {
 h2 {
 	color: var(--heder-font-color);
 
-	text-shadow: 0px 0px 10px rgb(235, 235, 235);
+	text-shadow: 0px 0px 10px var(--main-color-body);
 
 	transform: translateY(-10%);
 	transition: all 2s;
@@ -70,7 +101,7 @@ li {
 a {
 	text-decoration: none;
 
-	color: #000;
+	color: var(--main-colorB-tex);
 }
 
 .color-text {
@@ -111,7 +142,7 @@ a {
 	position: fixed;
 	justify-content: center;
 	align-items: center;
-	background: url(./img/up-arrow.png) no-repeat;
+	background: url(./img/up-arrow.png) no-repeat , var(--toUP-btn-color) ;
 	background-size: 70%;
 	background-position: center;
 	top: 120vh;
@@ -119,10 +150,11 @@ a {
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
-	border: 1px solid #000;
+	border: 1px solid var(--main-colorB-tex);
 	transition: 2s;
 	opacity: 0;
 	z-index: 20;
+	box-shadow: 0 0 5px var(--goUp-btn-shadow);
 }
 
 .__active.go-up-btn {
@@ -134,4 +166,70 @@ a {
 	display: flex;
 	height: 100%;
 	width: 100%;
+}
+
+
+.dark-them-toggle{
+	display: flex;
+	position: relative;
+	width: 40px;
+	height: 20px;
+	background: rgb(220, 220, 220);
+	border-radius: 20px;
+	border: 2px solid rgb(130, 130, 130);
+	box-shadow: 2px 2px 3px #000;
+	align-items: center;
+	transition: 1s;
+}
+
+
+.dark-them-toggle::before{
+	content: "🌙";
+	display: flex;
+	position: absolute;
+	right: -70%;
+}
+
+.dark-them-toggle::after{
+	content: "🔆";
+	display: flex;
+	position: absolute;
+	left: -70%;
+}
+
+.dark-them-toggle span{
+	display: flex;
+	position: absolute;
+	left: 0px;
+	width: 20px;
+	height: 20px;
+	background: rgb(130, 130, 130);
+	border-radius: 100%;
+	transition: 1s;
+}
+
+#dark-them_toggle{
+	display: flex;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	
+}
+
+#dark-them_toggle:checked ~ .menu .dark-them .dark-them-toggle span{
+	left: 20px;
+}
+
+#dark-them_toggle:checked ~ .menu .dark-them .dark-them-toggle{
+	background: rgb(47, 255, 0);
+}
+
+header .menu .dark-them.active{
+	background: rgba(0, 200, 0, 0);
+}
+
+header .menu .dark-them:hover{
+	background: rgba(0, 200, 0, 0);
+	
+	box-shadow: rgba(0, 200, 0, 0);
 }

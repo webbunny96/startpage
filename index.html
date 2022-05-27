@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<link rel="stylesheet" href="./main.css" />
-		<meta name="viewport" content="width=320px, initial-scale=1">
 		<link rel="shortcut icon" href="./favicon-logo.ico" type="image/x-icon">	
+		<meta name="MobileOptimized" content="320">
 		<title>Web Bunny</title>
 	</head>
 	<body>
@@ -17,6 +17,7 @@
 				</div>
 				<input type="checkbox" id="navList_toggle">
 				<input type="checkbox" id="langList" name="langList" />
+				<input type="checkbox" id="dark-them_toggle" name="dark-them_toggle" autocomplete="off"/>
 				<ul class="menu">
 					<li class="burger-point">
 						<label class="burger-button" for="navList_toggle">
@@ -30,6 +31,11 @@
 					<li><a href="#works" class="works"></a></li>
 					<li><a href="#contacts" class="contacts"></a></li>
 					<!-- <li class="price"><a class="price"></a></li> -->
+					<li class="dark-them">
+						<label class="dark-them-toggle" for="dark-them_toggle">
+							<span></span>
+						</label>
+					</li>
 					<li class="lang-list-point"><div class="lang-box">
 						<label class="lang-list" for="langList">
 							<ul>
@@ -149,8 +155,12 @@
 			</div>
 		</div>
 	
+		<script>
+			
+		</script>
 		<script src="./main.js"></script>
 
+		<script src="./js/autoScrollScript.js"></script>
 		<script src="./lang/lang.js"></script>
 		<script src="./hardSkils/hardSkils.js"></script>
 		<script src="./softSkils/softSkils.js"></script>

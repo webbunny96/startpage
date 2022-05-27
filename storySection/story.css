@@ -8,7 +8,7 @@
     position: relative;
     width: 90%;
     font-size: 20px;
-    color: rgb(83, 83, 83);
+    color: var(--story-text-color);
     text-align: center;
     transform: translateY(30%);
     transition: opacity 4s, transform 4s;
