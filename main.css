@@ -109,33 +109,7 @@ a {
 	font-weight: 900;
 }
 
-@media (max-device-width: 768px) {
-	html {
-		width: 100vw;
-	}
 
-	body {
-		width: 100vw;
-	}
-
-	section {
-		width: 100vw;
-	}
-}
-
-@media (max-width: 768px) {
-	*html {
-		max-width: 100vw;
-	}
-
-	body {
-		max-width: 100vw;
-	}
-
-	section {
-		max-width: 100vw;
-	}
-}
 
 .go-up-btn {
 	display: flex;
@@ -146,7 +120,7 @@ a {
 	background-size: 70%;
 	background-position: center;
 	top: 120vh;
-	right: 10vw;
+	left:90%;
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
@@ -232,4 +206,44 @@ header .menu .dark-them:hover{
 	background: rgba(0, 200, 0, 0);
 	
 	box-shadow: rgba(0, 200, 0, 0);
+}
+
+
+@media (max-device-width: 768px) {
+	html {
+		width: 100%;
+	}
+
+	body {
+		width: 100%;
+	}
+
+	section {
+		width: 100%;
+	}
+	.go-up-btn{
+		left: 60%;
+	}
+}
+
+@media (max-width: 768px) {
+	*html {
+		max-width: 100%;
+		margin: auto;
+		min-width: 350px;
+	}
+
+	body {
+		max-width: 100%;
+	}
+
+	section {
+		max-width: 100%;
+	}
+
+	.go-up-btn{
+		left: 60%;
+	}
+	
+	
 }

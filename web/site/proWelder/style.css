@@ -1,0 +1,789 @@
+/* Подключеня внешних стилей: */
+
+@import url(./components/navBurger/burger-style.css);
+
+/* Основные стили: */
+
+:root {
+  --hbord-size-m: 2%;
+  --hbord-size-b: 40%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 99vw;
+  color: #fff;
+  background: radial-gradient(
+    80.18% 135.13% at 68.33% 19.82%,
+    #050010 0%,
+    #000000 100%
+  );
+}
+
+header {
+  position: fixed;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  margin: 10px;
+}
+
+.logo span {
+  margin-left: 10px;
+}
+
+.logo img {
+  min-width: 70px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 40px;
+  transition: background-color 2s, transform 0.5s;
+}
+
+nav a:hover{
+    background: rgba(255, 255, 255, 0.75);
+    transform: scale(1.2);
+}
+
+.soc-link {
+  display: flex;
+  width: 100px;
+}
+
+.soc-link a {
+  display: flex;
+  margin: 5px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.soc-link a:hover{
+    transform: scale(1.2);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-top: 50px;
+}
+
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 50em;
+}
+
+.main-section {
+  justify-content: center;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(./img/bg.png) no-repeat;
+  background-size: cover;
+}
+
+.main-section h1,
+h2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 20%;
+  font-size: 350%;
+  background: rgba(0, 0, 0, 0.8);
+}
+.main-section h1 {
+  word-wrap: break-word;
+  flex-wrap: nowrap;
+}
+
+.main-section h1 span,
+h2 span {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+h1, h2{
+    transform: scale(0.6);
+    transition: 1s;
+    opacity: 0.5;
+}
+
+
+h1.__active, h2.__active{
+    transform: scale(1.1);
+    transition: 1s;
+    opacity: 1;
+}
+
+span.first-border{
+    left: -100%;
+    transition: 2s;
+}
+
+span.second-border{
+    right: -100%;
+    transition: 2s;
+}
+
+
+
+span.first-border.__active{
+    left: 0;
+}
+
+span.second-border.__active{
+    right: 0;
+}
+
+.main-section h1 span::after,
+h2 span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(var(--hbord-size-m) * -0.5);
+  width: calc(var(--hbord-size-m) / 2);
+  height: var(--hbord-size-b);
+  display: flex;
+  background: white;
+}
+
+.main-section h1 span::before,
+h2 span::before {
+  content: "";
+  position: absolute;
+  display: flex;
+  left: calc(var(--hbord-size-m) * -0.5);
+  top: calc(var(--hbord-size-m) * -2);
+  width: var(--hbord-size-b);
+  height: calc(var(--hbord-size-m) * 2);
+  background: white;
+}
+
+.main-section h1 span.second-border:after,
+h2 span.second-border:after {
+  content: "";
+  position: absolute;
+  right: calc(var(--hbord-size-m) * -0.5);
+  bottom: 0;
+  left: auto;
+  top: auto;
+  display: flex;
+  width: calc(var(--hbord-size-m) / 2);
+  height: var(--hbord-size-b);
+  background: white;
+}
+
+.main-section h1 span.second-border:before,
+h2 span.second-border:before {
+  content: "";
+  position: absolute;
+  display: flex;
+  right: calc(var(--hbord-size-m) * -0.5);
+  left: auto;
+  top: auto;
+  bottom: calc(var(--hbord-size-m) * -2);
+  width: var(--hbord-size-b);
+  height: calc(var(--hbord-size-m) * 2);
+  background: white;
+}
+
+h2 {
+  margin: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 30%;
+  height: 10%;
+  font-size: 200%;
+}
+
+.services-section {
+  height: auto;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80%;
+  margin-bottom: 50px;
+}
+
+.services > div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 250px;
+  height: 450px;
+  margin: 25px;
+  margin-top: 50px;
+  filter: drop-shadow(0px 50px 40px #000000);
+  border-radius: 5px;
+  border: 3px solid rgba(212, 149, 3, 0.8);
+  transition: 2s;
+  z-index: 2;
+}
+
+.services > div:hover{
+    transform: scale(1.2);
+}
+
+
+
+.services > div div button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 10%;
+    background: rgba(0, 0, 0, 0.8);
+    border: 0;
+    color: #fff;
+    margin: 100px;
+    transition: 1s;
+}
+
+.services > div h3 {
+  margin-top: 30px;
+  font-family: "Contrail One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 100px;
+  text-align: center;
+
+  color: #ad5707;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+}
+
+.services > div.MMA {
+    left: -300px;
+  background: linear-gradient(
+      160.2deg,
+      #000000 0%,
+      #000000 2.08%,
+      rgba(0, 0, 0, 0) 63.27%,
+      #000000 100%
+    ),
+    url(./img/mma.jfif) no-repeat;
+  background-size: cover;
+  background-position-x: 50%;
+}
+
+.services > div.TIG {
+  margin-top: 170px;
+  bottom: -200px;
+  background: linear-gradient(
+      160.2deg,
+      #000000 0%,
+      #000000 2.08%,
+      rgba(0, 0, 0, 0) 63.27%,
+      #000000 100%
+    ),
+    url(./img/tig.jfif) no-repeat;
+  background-size: cover;
+  background-position-x: 80%;
+}
+
+.services > div.MIG {
+    margin-top: 100px;
+    right: -300px;
+    background: linear-gradient(
+        160.2deg,
+        #000000 0%,
+        #000000 2.08%,
+        rgba(0, 0, 0, 0) 63.27%,
+        #000000 100%
+      ),
+      url(./img/mig.jfif) no-repeat;
+    background-size: cover;
+    background-position-x: 10%;
+  }
+  
+
+.services > div.MMA.__active {
+    left: 0;
+  }
+  
+  .services > div.TIG.__active {
+      bottom: 0;
+  }
+  
+  .services > div.MIG.__active {
+      right: 0;
+  }
+
+
+.services > div > div {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 0px;
+  transition: 2s;
+}
+
+.services > div:hover div{
+    display: flex;
+    position: absolute;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+.services > div div button:hover{
+    transform: scale(1.2);
+}
+.galery-section {
+  height: auto;
+}
+
+.galery-section .galery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  width: 80%;
+  height: 80%;
+  margin: 50px;
+}
+
+.galery-section picture {
+  display: grid;
+}
+
+.galery-section picture image {
+  background-size: cover;
+}
+
+.galery-section picture:nth-child(1),
+.galery-section picture:nth-child(3) {
+  width: 480px;
+  height: 398px;
+}
+
+.galery-section picture:nth-child(5),
+.galery-section picture:nth-child(4),
+.galery-section picture:nth-child(6),
+.galery-section picture:nth-child(2) {
+  height: 186px;
+  width: 455px;
+}
+
+.galery-section picture:nth-child(8),
+.galery-section picture:nth-child(9),
+.galery-section picture:nth-child(7),
+.galery-section picture:nth-child(10) {
+  width: 214px;
+  height: 186px;
+}
+
+.galery-section picture:nth-child(1) {
+  grid-area: 1 / 1 / 3 / 3;
+}
+.galery-section picture:nth-child(2) {
+  grid-area: 4 / 1 / 5 / 3;
+}
+.galery-section picture:nth-child(3) {
+  grid-area: 3 / 4 / 5 / 6;
+}
+.galery-section picture:nth-child(4) {
+  grid-area: 2 / 3 / 3 / 5;
+}
+.galery-section picture:nth-child(5) {
+  grid-area: 1 / 4 / 2 / 6;
+}
+.galery-section picture:nth-child(6) {
+  grid-area: 3 / 2 / 4 / 4;
+}
+.galery-section picture:nth-child(7) {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.galery-section picture:nth-child(8) {
+  grid-area: 1 / 3 / 2 / 4;
+}
+.galery-section picture:nth-child(9) {
+  grid-area: 2 / 5 / 3 / 6;
+}
+.galery-section picture:nth-child(10) {
+  grid-area: 4 / 3 / 5 / 4;
+}
+
+.picture:nth-child(1) {
+  grid-area: 1 / 1 / 3 / 3;
+}
+.picture:nth-child(2) {
+  grid-area: 1 / 3 / 2 / 4;
+}
+.picture:nth-child(3) {
+  grid-area: 1 / 4 / 2 / 6;
+}
+.picture:nth-child(4) {
+  grid-area: 2 / 3 / 3 / 5;
+}
+.picture:nth-child(5) {
+  grid-area: 2 / 5 / 3 / 6;
+}
+.picture:nth-child(6) {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.picture:nth-child(7) {
+  grid-area: 3 / 2 / 4 / 4;
+}
+.picture:nth-child(8) {
+  grid-area: 3 / 4 / 5 / 6;
+}
+.picture:nth-child(9) {
+  grid-area: 4 / 2 / 5 / 4;
+}
+.picture:nth-child(10) {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+.price-section {
+    position: relative;
+  height: auto;
+  width: 80%;
+  opacity: 0.1;
+  transition: 1s;
+}
+
+.price-section.__active{
+    opacity: 1;
+}
+
+.price-section::before {
+    position: absolute;
+    content: "";
+    opacity: 0.2;
+  height: 100%;
+  width: 100%;
+  background: url(./img/42950.jfif);
+}
+
+.price-section::after {
+    position: absolute;
+    content: "";
+    opacity: 0.2;
+  height: 100%;
+  width: 100%;
+  background: url(./img/07.png) no-repeat;
+  background-size: 100%;
+  opacity: 0.2;
+}
+
+table {
+  width: 100%;
+  margin: 50px;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+
+.price-section table td {
+  position: relative;
+  height: 30px;
+  padding: 5px;
+}
+
+.price-section table tr {
+  position: relative;
+}
+
+.price-section table td:nth-child(1) {
+  width: 10%;
+  text-align: center;
+}
+
+.price-section table td:nth-child(2) {
+  width: 55%;
+}
+
+.price-section table td:nth-child(3) {
+  width: 15%;
+  text-align: center;
+}
+.price-section table td:nth-child(4) {
+  width: 20%;
+  text-align: center;
+}
+
+.price-section table tr.header-table {
+  background: none;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.price-section table tr.main-row {
+  background: none;
+  font-weight: 700;
+  font-size: 15px;
+  background: #090043;
+}
+
+.price-section table tr::after {
+  content: "";
+  position: absolute;
+  display: flex;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(9, 0, 67, 0) 0%,
+    #090043 10%,
+    #090043 90%,
+    rgba(9, 0, 67, 0) 100%
+  );
+}
+
+.price-section table tr.main-row::after {
+  display: none;
+}
+
+.price-section table tr.main-row::after {
+  display: none;
+}
+
+.price-section table tr td::after {
+  content: "";
+  position: absolute;
+  display: flex;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 1px;
+  background: #090043;
+}
+
+.price-section table tr.main-row + tr td::after {
+  content: "";
+  position: absolute;
+  display: flex;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(9, 0, 67, 0) 2.6%, #090043 100%);
+}
+
+.price-section table tr:last-child td::after {
+  content: "";
+  position: absolute;
+  display: flex;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 1px;
+  background: linear-gradient(0deg, rgba(9, 0, 67, 0) 2.6%, #1601a2 100%);
+}
+
+.price-section table.table-price tr td:last-child::after {
+  content: "";
+  position: absolute;
+  display: flex;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 1px;
+  background: linear-gradient(0deg, rgba(9, 0, 67, 0) 2.6%, #d8d6e6 100%);
+}
+
+.price-section table tr td:last-child::after {
+  display: none;
+}
+
+.price-section table.table-price tr td:nth-child(4):after {
+  display: none;
+}
+
+.price-section table tr.header-table td::after {
+  display: none;
+}
+
+.price-section table tr:last-child::after {
+  display: none;
+}
+
+.contacts-sextion {
+  height: auto;
+}
+
+
+
+/* border: 5px solid #CCCCCC;
+Оформление стилей:
+.declaration-order {
+   Позиционирование 
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+   Блочная модель 
+  display: block;
+  float: right;
+  width: 100px;
+  height: 100px;
+
+   Типографика 
+  font: normal 13px "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+
+   Отображение 
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+
+   Прочее 
+  opacity: 1;
+}
+ */
+
+/* Шаблон: */
+/* Позиционирование */
+/* Блочная модель */
+/* Типографика */
+/* Отображение */
+/* Прочее */
+
+/* Каскад селекторов:
+Селектор тега: 	    1
+Селектор класса: 	10
+Селектор ID: 	    100
+Inline-стиль: 	    1000 
+*/
+
+/* ------------------------------------------ */
+/* ----- От маленьких экранов к большим ----- */
+/* ------------------------------------------ */
+
+/* Стили для очень маленьких экранов (телефоны в книжной ориентации,
+дисплей менее 576 пикселей). Записываются без медиа-запросов,
+поскольку в Bootstrap это значение по умолчанию */
+
+/* Стили для маленьких экранов (телефоны в альбомной ориентации,
+дисплей 576 пикселей и более) */
+@media (min-width: 576px) {
+}
+
+/* Стили для средних экранов (планшеты, дисплей 768 пикселей и более) */
+@media (min-width: 768px) {
+}
+
+/* Стили для больших экранов (ПК, дисплей 992 пикселей и более) */
+@media (min-width: 992px) {
+}
+
+/* Стили для очень больших экранов (ПК с большим монитором,
+дисплей 1200 пикселей и более) */
+@media (min-width: 1200px) {
+}
+
+/* ------------------------------------------ */
+/*------ От больших экранов к маленьким ------*/
+/* ------------------------------------------ */
+
+/* Стили для очень больших экранов (дисплей 1200 пикселей и более).
+Записываются без медиа-запросов, так как контрольная точка
+для очень больших экранов не имеет верхней границы по ширине */
+
+/* Стили для больших экранов (дисплей максимум 1199 пикселей) */
+@media (max-width: 1199px) {
+}
+
+/* Стили для средних экранов (дисплей максимум 991 пикселей) */
+@media (max-width: 991px) {
+}
+
+/* Стили для маленьких экранов (дисплей максимум 767 пикселей) */
+@media (max-width: 767px) {
+}
+
+/* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
+@media (max-width: 575px) {
+}
+
+/* Bootstrap: */
+
+/* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
+@media (max-width: 575px) {
+}
+
+/* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
+@media (min-width: 576px) and (max-width: 767px) {
+}
+
+/* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Стили для больших экранов (дисплей шириной от 992 пикселей до 1199 пикселей) */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* Стили для очень больших экранов (дисплей минимум 1200 пикселей) */
+@media (min-width: 1200px) {
+}
