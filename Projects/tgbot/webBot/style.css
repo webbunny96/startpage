@@ -664,6 +664,7 @@ input#notyfi {
   transform: scale(0.9);
 }
 
-/* .keyboard {
-  display: grid;
-} */
+.keyboard {
+  
+  margin-left: 10%;
+} 
