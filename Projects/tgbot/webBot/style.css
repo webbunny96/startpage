@@ -203,6 +203,7 @@ main {
   overflow: hidden;
   padding-top: 50px;
   transition: width 2s;
+  margin-left: 5%;
 }
 
 .messege {
