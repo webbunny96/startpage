@@ -32,6 +32,8 @@ function createMessage(messText, User = 'out') {
   messList.push(mess);
   reloadMessBox();
   saveHistory(messList);
+  let createMessage = new Event("createMessage",{bubbles: true});
+  messBox.dispatchEvent(createMessage);
 }
 
 textArea.addEventListener('change', () => {
@@ -56,7 +58,6 @@ sendBtn.addEventListener('click', btn => {
 
 function loadMess(arr) {
   if (arr.length != 0) {
-    //messList.length == 0
     arr.forEach(mess => {
       tempMess = document.createElement('div');
       tempMess.classList.add('messege');

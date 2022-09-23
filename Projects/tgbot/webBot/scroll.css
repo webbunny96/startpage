@@ -1,12 +1,13 @@
 .scrollBar{
     display: flex;
-    position: absolute;
+    position: fixed;
     right: 0;
-    top: 300px;
+    bottom: 70px;
     width: 10px;
-    height: 50px;
-    background: rgba(245, 0, 0, 0.849);
-    border-radius: 5px
+    height: 0;
+    background: rgba(184, 184, 184, 0.77);
+    border-radius: 5px;
+    z-index: 100;
 }
 
 .mess-box{
