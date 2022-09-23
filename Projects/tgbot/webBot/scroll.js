@@ -115,3 +115,15 @@ dragElement(scrollBar);
 document.addEventListener("scrollSb", ()=>{
     mesBox.style.bottom = (offset(scrollBar).top - 250) * 0.3 + 'px';
 });
+
+
+
+InitApp(); //Инициализировать приложение
+
+window.addEventListener("resize", InitApp); //При растягивании окна приложение будет инициализироваться заново
+
+function InitApp() //Растягиваем холст на весь экран
+{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}

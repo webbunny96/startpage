@@ -672,3 +672,20 @@ input#notyfi {
  }
 
 
+ .canvas
+ {
+     background: rgba(0, 0, 0, 0);
+     width: 100%;
+     height: 100%;
+     position: fixed;
+     top: 0;
+     left: 0;
+     margin: 0;
+ }
+ .messege.in .keyBoard{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+ }
