@@ -203,14 +203,13 @@ main {
   overflow: hidden;
   padding-top: 50px;
   transition: width 2s;
-  margin-left: 5%;
 }
 
 .messege {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  margin: 5px;
+  margin-left: 5%;
 }
 
 .messege > p {
