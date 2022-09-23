@@ -208,13 +208,13 @@ function saveHistory(iteam) {
 }
 
 function getHistory(iteam) {
-  return JSON.parse(localStorage.getItem(iteam));
+//  return JSON.parse(localStorage.getItem(iteam));
 }
 
 function removeHistory(iteam) {
   localStorage.removeItem(iteam);
 }
-
+localStorage.clear();
 function clearHistory() {
   localStorage.clear();
   location.reload();
