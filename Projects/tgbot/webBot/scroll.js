@@ -84,7 +84,7 @@ mesBox.addEventListener('wheel', e => {
     if (e.deltaY >= 0  && Math.round( offset(mesBox).bottom) >= 550) {
       scroll += 50;
     }
-    if (e.deltaY < 0 && Math.round( offset(mesBox).top) <= 50) {
+    if (e.deltaY < 0 && Math.round( offset(mesBox).top) <= -150) {
       scroll -= 50;
     }
     scrollP(scroll);
