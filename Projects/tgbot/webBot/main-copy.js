@@ -32,7 +32,7 @@ function createMessage(messText, User = 'out') {
   messList.push(mess);
   reloadMessBox();
   saveHistory(messList);
-  let createMessage = new Event("createMessage",{bubbles: true});
+  let createMessage = new Event('createMessage', { bubbles: true });
   messBox.dispatchEvent(createMessage);
 }
 
@@ -103,7 +103,7 @@ function reloadMessBox() {
     if (messList[messList.length - 1].user == 'keyboard') {
       let buyons = text.querySelectorAll('.bot-btn-inl');
       buyons.forEach(btn => {
-        btn.classList.add(text.querySelector('.bot-btn-inl').innerHTML);
+        //btn.classList.add(text.querySelector('.bot-btn-inl').innerHTML);
       });
     }
     p.append(text);
@@ -217,6 +217,7 @@ function removeHistory(iteam) {
 
 function clearHistory() {
   localStorage.clear();
+  location.reload();
 }
 
 searchInput.addEventListener(
@@ -308,11 +309,11 @@ function sendAnswer(text, type = 'in') {
 }
 
 function listenMessage(text = 'none', func = () => {}) {
-  if(messList.length !=0 ){
+  if (messList.length != 0) {
     let listener = setInterval(() => {
-      
       if (
-        messList[messList.length - 1].text.toLowerCase() == text.toLowerCase() &&
+        messList[messList.length - 1].text.toLowerCase() ==
+          text.toLowerCase() &&
         messList.length != 0 &&
         messList[messList.length - 1].user != 'in'
       ) {
@@ -383,8 +384,14 @@ function createBtn(
 ) {
   let btn = document.createElement('div');
   btn.classList.add('bot-btn-inl');
+
+  if (btnОbj.text.includes(' ')) {
+    btn.classList.add(btnОbj.text.replace(/ /g, '-'));
+  } else {
+    btn.classList.add(btnОbj.text);
+  }
+
   btn.innerText = btnОbj.text;
-  btn.classList.add(btn.innerTex);
   return btn;
 }
 
@@ -400,6 +407,8 @@ function createKeyBoard(btn, stle = '') {
   }
   return keyBoard;
 }
+
+///-----------------------------------------------------------------------
 
 let mainMenu = [
   {
@@ -444,14 +453,237 @@ mainMenu.forEach((keyName, i) => {
   mainMenu[i] = createBtn(keyName);
 });
 
+///-----------------------------------------------------------------------
 
-// document.querySelector('.' + mainMenu[0].text).addEventListener('click', () => {
-//   sendAnswer(createKeyBoard(mainMenu).outerHTML, 'keyboard');
-// });
+let Level2 = [
+  ///kategori
+  {
+    text: 'FX License',
+  },
+  {
+    text: 'Crypto License',
+  },
+  {
+    text: 'Banking License',
+  },
+  {
+    text: 'PSP License',
+  },
+  {
+    text: 'Gambling License',
+  },
+];
 
+Level2.forEach((keyName, i) => {
+  //kategori
+  Level2[i] = createBtn(keyName); //kategori
+});
+
+let Level3 = [
+  ///kategori
+  {
+    text: 'Fiji Forex License',
+  },
+  {
+    text: 'Hong Kong Forex License',
+  },
+  {
+    text: 'Saint Vincent Forex License',
+  },
+];
+
+Level3.forEach((keyName, i) => {
+  //kategori
+  Level3[i] = createBtn(keyName); //kategori
+});
+
+let Level4 = [
+  ///kategori
+  {
+    text: 'Taxes',
+  },
+  {
+    text: 'Inquiry',
+  },
+  {
+    text: 'FAQ',
+  },
+  {
+    text: 'Live chat',
+  },
+];
+
+
+
+
+Level4.forEach((keyName, i) => {
+  //kategori
+  Level4[i] = createBtn(keyName); //kategori
+});
+
+let Level5 = [
+  ///kategori
+  {
+    text: 'Europe',
+  },
+  {
+    text: 'North & South    America',
+  },
+  {
+    text: 'Caribbean',
+  },
+  {
+    text: 'Asia',
+  },
+  {
+    text: 'Africa',
+  },
+  {
+    text: 'Oceania & Pacific Islands',
+  },
+];
+
+Level5.forEach((keyName, i) => {
+  //kategori
+  Level5[i] = createBtn(keyName); //kategori
+});
+
+let Level6 = [
+  ///kategori
+  {
+    text: 'Europe',
+  },
+  {
+    text: 'Africa',
+  },
+  {
+    text: 'Caribbean',
+  },
+  {
+    text: 'Asia',
+  },
+  {
+    text: 'Oceania & Pacific Islands',
+  },
+];
+
+Level6.forEach((keyName, i) => {
+  //kategori
+  Level6[i] = createBtn(keyName); //kategori
+});
+
+let Level7 = [
+  ///kategori
+  {
+    text: 'Merchant',
+  },
+  {
+    text: 'Payment gateway',
+  },
+];
+
+Level7.forEach((keyName, i) => {
+  //kategori
+  Level7[i] = createBtn(keyName); //kategori
+});
+
+
+let Level8 = [
+  ///kategori
+  {
+    text: 'FINHUB',
+  },
+  {
+    text: 'MT4/MT5',
+  },
+  {
+    text: 'Social trading Platform',
+  },
+];
+
+Level8.forEach((keyName, i) => {
+  //kategori
+  Level8[i] = createBtn(keyName); //kategori
+});
+
+
+let Level9 = [
+  ///kategori
+  {
+    text: 'Finhub CRM',
+  },
+  {
+    text: 'Broctagon CRM',
+  },
+];
+
+Level9.forEach((keyName, i) => {
+  //kategori
+  Level9[i] = createBtn(keyName); //kategori
+});
+
+let messFijiForexLicense =
+  '<img src="../menuIcon/FX B2B Hub Telegram mockup - Page 1.jpeg" alt="">Fiji Forex License<br><br>As part of its regulatory responsibilities, the Reserve Bank of Fiji acts as gate-keepers for the respective sectors it supervises.<br>Interested entities who would like to pursue the undertaking of these regulated activities would need to be licensed and/or registered by the Reserve Bank. This applies to the business/activity of: banking (including credit institutions), insurance, restricted foreign exchange dealing, money changer, insurance broker, insurance agent, securities exchange, stock broker, investment advisor, capital raising, credit reporting agency, credit information provider and credit report recipient.<br>The Reserve Bank supervises the Fiji National Provident Fund and the Fiji Development Bank.  The former through the FNPF Act and the latter through the direction of the Minister of Economy under the provisions of the Banking Act.<br>Provided here are the list of licensed entities for the various industries, while a separate section provides the licensing/registration checklists for these different activities.';
 
 sendAnswer(createKeyBoard(mainMenu).outerHTML, 'keyboard');
 
- document.querySelector(".License").addEventListener("click",()=>{
-  alert("work")
- });
+document.querySelector('.License').addEventListener('click', () => {
+  sendAnswer(createKeyBoard(Level2).outerHTML, 'keyboard');
+  document.querySelector('.FX-License').addEventListener('click', () => {
+    //name btn
+    sendAnswer(createKeyBoard(Level3).outerHTML, 'keyboard'); // next menu
+    document
+      .querySelector('.Fiji-Forex-License')
+      .addEventListener('click', () => {
+        //name btn
+        sendAnswer(messFijiForexLicense + createKeyBoard(Level4).outerHTML); // next menu
+        document.querySelector('.Taxes').addEventListener('click', () => {
+          //name btn
+          sendAnswer(
+            'Tax for individuals <br>      Applied to individuals who respond to criteria of tax resident one of which is to be in the country at least 183 days. If an individual is domiciled in the UK, the individual has to impose taxes on worldwide income. Double taxation can be avoided if the corresponding Double Taxation Agreement between jurisdictions is concluded. <br>If an individual is a British resident and has no domicile status, the individual receives a privilege to elude paying tax on foreign income providing that the income is not brought to the UK (remittance). Non-residents pay income tax if it was received in the UK jurisdiction. <br>Income tax<br>Imposed upon salaries, bonuses, pensions, and savings accounts interest. The standard Personal Allowance is £12,570, which is the amount of income you do not have to pay tax on. Your Personal Allowance may be bigger if you claim Marriage '
+          ); // next menu
+        });
+        document.querySelector('.Inquiry').addEventListener('click', () => {
+          sendAnswer(
+            'Leave your email / ohone and our manager will contact you asap'
+          ); // next menu
+          console.log('work');
+        });
+        document.querySelector('.FAQ').addEventListener('click', () => {
+          //name btn
+          // sendAnswer(
+          //   "1. What do you need to obtain a Forex Broker License?<br>Here's a small list for getting a Forex license in any jurisdiction:<br>corporate document regulation;<br>registration of the company;<br>required AML/KYC procedures;<br>state fees;<br>opened corporate bank account;<br>opened merchant account.<br>The docs requirements vary depending on the jurisdiction.<br>2.How much does an FX license cost?<br>Price of the license depends on jurisdiction and market, it starts from $ 5 000.00 up to $ 300 000.00.<br>3. How long does it take to get an FX license?<br>Depends on license from 3 business days to 12 months, depends on jurisdiction and market.<br>4.What is the minimum capital to establish FX brokerage?<br>Here are the main expenses which may be required at the beginning: license application fee, deposit, monthly operational fees, company registration, trading platform, liquidity.<br><br><br>5. How much does a company must freeze for the licence?<br><br>Some licenses, for example  FCA UK requires GBP 730 000 deposit, some offshore licenses does not require any deposit."
+          // ); // next menu
+        });
+        document.querySelector('.Live-chat').addEventListener('click', () => {
+          //name btn
+          sendAnswer('Direct message to the admin'); // next menu
+        });
+      });
+  });
+});
+
+
+document.querySelector('.Company-formation').addEventListener('click', () => {
+  sendAnswer(createKeyBoard(Level5).outerHTML, 'keyboard');
+});
+
+document.querySelector('.Bank-accounts').addEventListener('click', () => {
+  sendAnswer(createKeyBoard(Level6).outerHTML, 'keyboard');
+});
+
+document.querySelector('.Merchant-and-PSP').addEventListener('click', () => {
+  sendAnswer(createKeyBoard(Level7).outerHTML, 'keyboard');
+});
+
+document.querySelector('.Trading-platform').addEventListener('click', () => {
+  sendAnswer(createKeyBoard(Level8).outerHTML, 'keyboard');
+});
+
+document.querySelector('.CRM').addEventListener('click', () => {
+  sendAnswer(createKeyBoard(Level9).outerHTML, 'keyboard');
+});
+
+document.querySelector('.Go-to-web').addEventListener('click', () => {
+  window.open('https://www.fxb2bhub.com', '_blank');
+});

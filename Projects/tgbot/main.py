@@ -15,6 +15,9 @@ from telegram import ParseMode
 import config
 import logging
 
+
+chatId = []
+
 game_short_name = "hkjhgkgj_menu_bot"
 # Объект бота
 bot = Bot(token = config.BOT_TOKEN, parse_mode=types.ParseMode.HTML)
@@ -157,6 +160,7 @@ def get_keyboard_menu4():
 async def cmd_start(message: types.Message):
     await message.answer("Вас приветсвует тестовий телеграм бот \nВыберете необходимое меню:", reply_markup=keyboard)
     await bot.send_game(message.chat.id, game_short_name , reply_markup = get_keyboard_Game())
+    chatId.append(message.chat.id)
     
 
 
@@ -251,11 +255,12 @@ markupPPPP = InlineKeyboardMarkup(buttonuuu)
 async def send_game(message: types.Message):
     await bot.send_game(message.chat.id, game_short_name , reply_markup = get_keyboard_Game())
     print("send game")
+    chatId.append(message.chat.id)
 
 @dp.callback_query_handler(lambda callback_query: callback_query.game_short_name == game_short_name)
 async def game(call):
-    await bot.answer_callback_query(call.id, url = "https://webbunny.netlify.app/")
-    print("open game")
+    await bot.answer_callback_query(call.id, url = "https://webbunny.netlify.app/projects/tgbot/webbot/")
+    print(chatId)
 
 @dp.message_handler(lambda message: message.text == "$_Вернуться в главное меню")
 async def without_puree(message: types.Message):
