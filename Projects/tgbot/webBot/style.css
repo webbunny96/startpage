@@ -664,7 +664,7 @@ input#notyfi {
   transform: scale(0.9);
 }
 
-.keyboard {
+.keyboard p{
   
   margin-left: 10%;
 } 
