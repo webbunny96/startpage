@@ -710,7 +710,7 @@ input#notyfi {
   --window-width: 20vw;
   display: flex;
   width: var(--window-width);
-  height: calc(var(--window-width) * 0.7) ;
+  height: calc(var(--window-width) * 0.6) ;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
