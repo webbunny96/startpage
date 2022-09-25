@@ -707,7 +707,7 @@ input#notyfi {
 }
 
 .slider .slide{
-  --window-width: 20vw;
+  --window-width: 30vw;
   display: flex;
   width: var(--window-width);
   height: calc(var(--window-width) * 0.6) ;
