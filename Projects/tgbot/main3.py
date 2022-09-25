@@ -54,3 +54,4 @@ if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)
 # Запускаем бота
 bot.polling(none_stop=True, interval=0)
+

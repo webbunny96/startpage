@@ -2,7 +2,10 @@ let mesBox = document.querySelector('.mess-box');
 let scrollBar = document.querySelector('.scrollBar');
 let header = document.querySelector("header");
 let footer = document.querySelector("footer"); 
+let body = document.querySelector("body");
 
+
+let body_diff_mesBox;
 
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -33,30 +36,24 @@ function dragElement(elmnt) {
       pos3 = e.clientX;
       pos4 = e.clientY;
       // set the element's new position:
-
-      if(Math.round(offset(scrollBar).top) >= Math.round(offset(header).bottom)){
-        console.log("work");
+     
+      if(Math.round( offset(mesBox).bottom) >= Math.round(offset(footer).top) && Math.round(offset(mesBox).top) <= Math.round( header.offsetHeight)){
         elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
         //elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
   
         let scrollSb = new Event("scrollSb",{bubbles: true});
-        messBox.dispatchEvent(scrollSb);
+        mesBox.dispatchEvent(scrollSb);
       }
-       
-      console.log(Math.round(offset(scrollBar).bottom), Math.round(offset(footer).top), elmnt.style.top);
-      
-      if(Math.round(offset(scrollBar).top) <= Math.round(offset(header).bottom)){
-        elmnt.style.top = 66 + "px";
-        
-        let scrollSb = new Event("scrollSb",{bubbles: true});
-        messBox.dispatchEvent(scrollSb);
+          console.log(Math.round( offset(mesBox).bottom), Math.round(offset(footer).top),Math.round( offset(mesBox).bottom) >= Math.round(offset(footer).top) , Math.round(offset(mesBox).top), Math.round( header.offsetHeight), Math.round(offset(mesBox).top) <= Math.round( header.offsetHeight))
+      if(Math.round( offset(mesBox).bottom) < Math.round(offset(footer).top)){
+        mesBox.style.bottom = footer.offsetHeight + 10 + "px";
       }
 
-      if(Math.round(offset(footer).top) <= Math.round(offset(scrollBar).bottom)){
-        elmnt.style.top = 387  + "px";
-        let scrollSb = new Event("scrollSb",{bubbles: true});
-        messBox.dispatchEvent(scrollSb);
-      }
+      // if(Math.round(offset(footer).top) <= Math.round(offset(scrollBar).bottom)){
+      //   elmnt.style.top = offset(footer).top - scrollBar.offsetHeight  + "px";
+      //   let scrollSb = new Event("scrollSb",{bubbles: true});
+      //   messBox.dispatchEvent(scrollSb);
+      // }
     }
   
     function closeDragElement() {
@@ -81,19 +78,22 @@ function offset(el) {
 let scroll = 75;
 
 mesBox.addEventListener('wheel', e => {
-    if (e.deltaY >= 0  && Math.round( offset(mesBox).bottom) >= 550) {
+    if (e.deltaY >= 0  && Math.round( offset(mesBox).bottom) >= offset(footer).top) {
       scroll += 50;
     }
-    if (e.deltaY < 0 && Math.round( offset(mesBox).top) <= 50) {
+    if (e.deltaY < 0 && Math.round( offset(mesBox).top) <=  header.offsetHeight) {
       scroll -= 50;
     }
     scrollP(scroll);
+    console.log();
 });
 
 function scrollP(scroll_px) {
     mesBox.style.bottom = scroll_px + 'px';
-    scrollBar.style.bottom = (scroll_px - 120) * -1.5 + 'px';
-}
+    scrollBar.style.top = (Math.round( offset(mesBox).top) - header.offsetHeight) * -1 + 'px';
+    console.log(offset(scrollBar).bottom);
+
+  }
 
 document.addEventListener("createMessage", ()=>{
     scrollShowHide();
@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 });
 
 function scrollShowHide() {
-    if((mesBox.offsetHeight + header.offsetHeight) > (document.querySelector("body").offsetHeight)){
-        scrollBar.style.height = document.querySelector("body").offsetHeight-(mesBox.offsetHeight - (header.offsetHeight + 100))  + "px";
+    if((mesBox.offsetHeight + header.offsetHeight) > (document.querySelector("body").offsetHeight) - header.offsetHeight){
+        scrollBar.style.height = (body.offsetHeight - (footer.offsetHeight + header.offsetHeight)) - (mesBox.offsetHeight - (body.offsetHeight - (footer.offsetHeight + header.offsetHeight)) ) + "px";
     }else{
         scrollBar.style.height = 0 +"px";
     }
@@ -113,14 +113,16 @@ function scrollShowHide() {
 
 dragElement(scrollBar);
 document.addEventListener("scrollSb", ()=>{
-    mesBox.style.bottom = (offset(scrollBar).top - 250) * 0.3 + 'px';
+    mesBox.style.bottom = Math.round(offset(scrollBar).top) - (header.offsetHeight + footer.offsetHeight )  + 'px';
 });
 
 
 
-InitApp(); //Инициализировать приложение
+//InitApp(); //Инициализировать приложение
 
-window.addEventListener("resize", InitApp); //При растягивании окна приложение будет инициализироваться заново
+window.addEventListener("resize", ()=>{
+  scrollShowHide();
+}); //При растягивании окна приложение будет инициализироваться заново
 
 function InitApp() //Растягиваем холст на весь экран
 {
