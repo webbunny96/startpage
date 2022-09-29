@@ -808,4 +808,7 @@ input#notyfi {
     width: 7vw;
     height: 7vw;
   }
+  .slick-slider{
+    width: 80vw;
+  }
 }
