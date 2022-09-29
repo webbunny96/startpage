@@ -775,7 +775,7 @@ input#notyfi {
   transition: 1s;
   opacity: 0.8;
   transform: scale(0.8);
-  font-size: 0.8em;
+  font-size: 2vw;
 }
 
 .slick-arrow{
