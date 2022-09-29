@@ -698,3 +698,7 @@ $(document).ready(function(){
     adaptiveHeight: false
   });
 });
+
+document.addEventListener("resize", (event)=>{
+  $(".slider").slick("setPosition");
+});
