@@ -9,14 +9,19 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
     <title>Welcome to bot</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./scroll.css" />
-    
+
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
   </head>
   <body>
-    <div class="background" style="opacity: 1;"></div>
+    <div class="background" style="opacity: 1"></div>
     <header>
       <div class="names">
         <picture><img src="./img/logo.webp" alt="" /></picture>
@@ -36,8 +41,47 @@
         <!-- <span>Set</span> -->
       </div>
     </header>
-    <main class="mess-box">    
-      <div class="scrollBar"></div></main>
+    <main class="mess-box">
+      <div class="scrollBar"></div>
+      <div  class="slider">
+        <div class="slider__iteam">
+          <h3 class="menu-iteam">License</h3>
+        </div>
+        <div class="slider__iteam">
+          <h3 class="menu-iteam">Company formation</h3>
+        </div>
+        <div class="slider__iteam">
+          <h3 class="menu-iteam">Bank accounts</h3>
+        </div>
+        <div class="slider__iteam">
+          <h3 class="menu-iteam">Merchant and PSP</h3>
+        </div>
+        <div class="slider__iteam">
+          <h3 class="menu-iteam">White label</h3>
+        </div>
+        <div class="slider__iteam">
+          <h3 class="menu-iteam">Trading platform</h3>
+        </div>
+        <div class="slider__iteam">
+          <h3 class="menu-iteam">CRM</h3>
+        </div>
+        <div class="slider__iteam">
+          <h3 class="menu-iteam">Inquiry</h3>
+        </div>
+        <div class="slider__iteam">
+          <h3 class="menu-iteam">Live chat</h3>
+        </div>
+        <div class="slider__iteam">
+          <h3 class="menu-iteam">FAQ</h3>
+        </div>
+        <div class="slider__iteam">
+          <h3 class="menu-iteam">Our team</h3>
+        </div>
+        <div class="slider__iteam">
+          <h3 class="menu-iteam">Go to web</h3>
+        </div>
+       </div>
+    </main>
     <footer>
       <div>
         <span class="emoj"
@@ -88,7 +132,8 @@
           <div><span>Уведомления</span></div>
           <span
             ><input type="checkbox" name="" id="notyfi" /><label
-              for="notyfi" class="notyfiChek"
+              for="notyfi"
+              class="notyfiChek"
             ></label
           ></span>
         </div>
@@ -109,6 +154,7 @@
       </div>
     </div>
     <!-- <canvas width="300" height="300" id="canvas" class="canvas"></canvas> -->
+    <script src="./slick.min.js"></script>
     <script src="./main-copy.js"></script>
     <script src="./scroll.js"></script>
   </body>

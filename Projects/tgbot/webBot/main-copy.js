@@ -627,8 +627,8 @@ Level9.forEach((keyName, i) => {
 //   '<img src="../menuIcon/FX B2B Hub Telegram mockup - Page 1.jpeg" alt="">Fiji Forex License<br><br>As part of its regulatory responsibilities, the Reserve Bank of Fiji acts as gate-keepers for the respective sectors it supervises.<br>Interested entities who would like to pursue the undertaking of these regulated activities would need to be licensed and/or registered by the Reserve Bank. This applies to the business/activity of: banking (including credit institutions), insurance, restricted foreign exchange dealing, money changer, insurance broker, insurance agent, securities exchange, stock broker, investment advisor, capital raising, credit reporting agency, credit information provider and credit report recipient.<br>The Reserve Bank supervises the Fiji National Provident Fund and the Fiji Development Bank.  The former through the FNPF Act and the latter through the direction of the Minister of Economy under the provisions of the Banking Act.<br>Provided here are the list of licensed entities for the various industries, while a separate section provides the licensing/registration checklists for these different activities.';
 
 sendAnswer('<iframe src="https://www.youtube.com/embed/hS4HVGJduxQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', 'ful-width');
-sendAnswer('      <div class="slider"><ul>  <li class="slide">License</li><li class="slide">Company formation</li><li class="slide">Bank accounts</li></ul></div>', 'ful-width');
-
+// sendAnswer('      <div class="slider"><ul>  <li class="slide">License</li><li class="slide">Company formation</li><li class="slide">Bank accounts</li></ul></div>', 'ful-width');
+// sendAnswer("Fiji Forex License<br><br>As part of its regulatory responsibilities, the Reserve Bank of Fiji acts as gate-keepers for the respective sectors it supervises.<br>Interested entities who would like to pursue the undertaking of these regulated activities would need to be licensed and/or registered by the Reserve Bank. This applies to the business/activity of: banking (including credit institutions), insurance, restricted foreign exchange dealing, money changer, insurance broker, insurance agent, securities exchange, stock broker, investment advisor, capital raising, credit reporting agency, credit information provider and credit report recipient.<br>The Reserve Bank supervises the Fiji National Provident Fund and the Fiji Development Bank.  The former through the FNPF Act and the latter through the direction of the Minister of Economy under the provisions of the Banking Act.<br>Provided here are the list of licensed entities for the various industries, while a separate section provides the licensing/registration checklists for these different activities.");
 // document.querySelector('.License').addEventListener('click', () => {
 //   sendAnswer(createKeyBoard(Level2).outerHTML, 'keyboard');
 //   document.querySelector('.FX-License').addEventListener('click', () => {
@@ -690,3 +690,11 @@ sendAnswer('      <div class="slider"><ul>  <li class="slide">License</li><li cl
 //   window.open('https://www.fxb2bhub.com', '_blank');
 // });
 
+$(document).ready(function(){
+  $(".slider").slick({
+    slidesToShow: 3,
+    centerMode: true,
+    variableWidth: true,
+    adaptiveHeight: false
+  });
+});

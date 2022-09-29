@@ -737,3 +737,63 @@ input#notyfi {
 .slider .slide iframe{
   width: 45vw;
 }
+
+.slick-slider{
+  width: 55vw;
+  align-self: center;
+}
+
+.slick-track{
+  display: flex;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-slide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-slide .menu-iteam{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  background: #fff;
+  border-radius: 50%;
+  border: 3px solid #91deff;
+  text-align: center;
+  margin: 20px;
+  transition: 1s;
+  opacity: 0.8;
+  transform: scale(0.8);
+}
+
+.slick-arrow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(./img/icons8-right-arrow-32.png) no-repeat;
+  color: rgb(0, 0, 0, 0);
+  background-position: center;
+  border: none;
+  cursor: pointer;
+}
+
+/* Стрелка влево */
+.slick-arrow.slick-prev{
+  background: url(./img/icons8-left-arrow-32.png) no-repeat;
+  
+  background-position: center;
+}
+
+
+.slick-slide.slick-center .menu-iteam{
+  opacity: 1;
+  transform: scale(1);
+}
+
