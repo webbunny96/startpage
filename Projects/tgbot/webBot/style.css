@@ -804,10 +804,7 @@ input#notyfi {
 
 
 @media (max-width: 768px) {
-  .slick-slide .menu-iteam{
-    width: 7vw;
-    height: 7vw;
-  }
+
   .slick-slider{
     width: 90vw;
   }
