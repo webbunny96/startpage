@@ -325,7 +325,7 @@ function listenMessage(text = 'none', func = () => {}) {
 }
 
 listenMessage('привет', () => {
-  sendAnswer(createKeyBoard(mainMenu).outerHTML, 'keyboard');
+  //sendAnswer(createKeyBoard(mainMenu).outerHTML, 'keyboard');
 });
 
 function openInfo() {
@@ -450,9 +450,9 @@ let mainMenu = [
   },
 ];
 
-mainMenu.forEach((keyName, i) => {
-  mainMenu[i] = createBtn(keyName);
-});
+// mainMenu.forEach((keyName, i) => {
+//   mainMenu[i] = createSliderMenu(keyName);
+// });
 
 ///-----------------------------------------------------------------------
 
@@ -477,7 +477,7 @@ let Level2 = [
 
 Level2.forEach((keyName, i) => {
   //kategori
-  Level2[i] = createBtn(keyName); //kategori
+  Level2[i] = createSliderMenu(keyName); //kategori
 });
 
 let Level3 = [
@@ -495,7 +495,7 @@ let Level3 = [
 
 Level3.forEach((keyName, i) => {
   //kategori
-  Level3[i] = createBtn(keyName); //kategori
+  Level3[i] = createSliderMenu(keyName); //kategori
 });
 
 let Level4 = [
@@ -519,7 +519,7 @@ let Level4 = [
 
 Level4.forEach((keyName, i) => {
   //kategori
-  Level4[i] = createBtn(keyName); //kategori
+  Level4[i] = createSliderMenu(keyName); //kategori
 });
 
 let Level5 = [
@@ -546,7 +546,7 @@ let Level5 = [
 
 Level5.forEach((keyName, i) => {
   //kategori
-  Level5[i] = createBtn(keyName); //kategori
+  Level5[i] = createSliderMenu(keyName); //kategori
 });
 
 let Level6 = [
@@ -570,7 +570,7 @@ let Level6 = [
 
 Level6.forEach((keyName, i) => {
   //kategori
-  Level6[i] = createBtn(keyName); //kategori
+  Level6[i] = createSliderMenu(keyName); //kategori
 });
 
 let Level7 = [
@@ -585,7 +585,7 @@ let Level7 = [
 
 Level7.forEach((keyName, i) => {
   //kategori
-  Level7[i] = createBtn(keyName); //kategori
+  Level7[i] = createSliderMenu(keyName); //kategori
 });
 
 
@@ -604,7 +604,7 @@ let Level8 = [
 
 Level8.forEach((keyName, i) => {
   //kategori
-  Level8[i] = createBtn(keyName); //kategori
+  Level8[i] = createSliderMenu(keyName); //kategori
 });
 
 
@@ -620,7 +620,7 @@ let Level9 = [
 
 Level9.forEach((keyName, i) => {
   //kategori
-  Level9[i] = createBtn(keyName); //kategori
+  Level9[i] = createSliderMenu(keyName); //kategori
 });
 
 // let messFijiForexLicense =
@@ -629,16 +629,17 @@ Level9.forEach((keyName, i) => {
 sendAnswer('<iframe src="https://www.youtube.com/embed/hS4HVGJduxQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', 'ful-width');
 // sendAnswer('      <div class="slider"><ul>  <li class="slide">License</li><li class="slide">Company formation</li><li class="slide">Bank accounts</li></ul></div>', 'ful-width');
 // sendAnswer("Fiji Forex License<br><br>As part of its regulatory responsibilities, the Reserve Bank of Fiji acts as gate-keepers for the respective sectors it supervises.<br>Interested entities who would like to pursue the undertaking of these regulated activities would need to be licensed and/or registered by the Reserve Bank. This applies to the business/activity of: banking (including credit institutions), insurance, restricted foreign exchange dealing, money changer, insurance broker, insurance agent, securities exchange, stock broker, investment advisor, capital raising, credit reporting agency, credit information provider and credit report recipient.<br>The Reserve Bank supervises the Fiji National Provident Fund and the Fiji Development Bank.  The former through the FNPF Act and the latter through the direction of the Minister of Economy under the provisions of the Banking Act.<br>Provided here are the list of licensed entities for the various industries, while a separate section provides the licensing/registration checklists for these different activities.");
-// document.querySelector('.License').addEventListener('click', () => {
-//   sendAnswer(createKeyBoard(Level2).outerHTML, 'keyboard');
+
+//document.querySelector('.License').addEventListener('click', () => {
+//   sendAnswer(createSlider(Level2).outerHTML, 'keyboard');
 //   document.querySelector('.FX-License').addEventListener('click', () => {
 //     //name btn
-//     sendAnswer(createKeyBoard(Level3).outerHTML, 'keyboard'); // next menu
+//     sendAnswer(createSlider(Level3).outerHTML, 'keyboard'); // next menu
 //     document
 //       .querySelector('.Fiji-Forex-License')
 //       .addEventListener('click', () => {
 //         //name btn
-//         sendAnswer(messFijiForexLicense + createKeyBoard(Level4).outerHTML); // next menu
+//         sendAnswer(messFijiForexLicense + createSlider(Level4).outerHTML); // next menu
 //         document.querySelector('.Taxes').addEventListener('click', () => {
 //           //name btn
 //           sendAnswer(
@@ -667,23 +668,23 @@ sendAnswer('<iframe src="https://www.youtube.com/embed/hS4HVGJduxQ" title="YouTu
 
 
 // document.querySelector('.Company-formation').addEventListener('click', () => {
-//   sendAnswer(createKeyBoard(Level5).outerHTML, 'keyboard');
+//   sendAnswer(createSlider(Level5).outerHTML, 'keyboard');
 // });
 
 // document.querySelector('.Bank-accounts').addEventListener('click', () => {
-//   sendAnswer(createKeyBoard(Level6).outerHTML, 'keyboard');
+//   sendAnswer(createSlider(Level6).outerHTML, 'keyboard');
 // });
 
 // document.querySelector('.Merchant-and-PSP').addEventListener('click', () => {
-//   sendAnswer(createKeyBoard(Level7).outerHTML, 'keyboard');
+//   sendAnswer(createSlider(Level7).outerHTML, 'keyboard');
 // });
 
 // document.querySelector('.Trading-platform').addEventListener('click', () => {
-//   sendAnswer(createKeyBoard(Level8).outerHTML, 'keyboard');
+//   sendAnswer(createSlider(Level8).outerHTML, 'keyboard');
 // });
 
 // document.querySelector('.CRM').addEventListener('click', () => {
-//   sendAnswer(createKeyBoard(Level9).outerHTML, 'keyboard');
+//   sendAnswer(createSlider(Level9).outerHTML, 'keyboard');
 // });
 
 // document.querySelector('.Go-to-web').addEventListener('click', () => {
@@ -701,4 +702,87 @@ $(document).ready(function(){
 
 document.addEventListener("resize", (event)=>{
   $(".slider").slick("setPosition");
+});
+
+
+function createSliderMenu(  slideОbj = {
+  text: 'slide',
+  func: ()=>{console.log("not function")}
+},
+style = '',
+) {
+let slide = document.createElement('div');
+slide.classList.add('slider__iteam');
+let menuIteam = document.createElement('h3');
+menuIteam.classList.add('menu-iteam');
+
+
+
+slide.onclick = slideОbj.func;
+
+if (slideОbj.text.includes(' ')) {
+  slide.classList.add(slideОbj.text.replace(/ /g, '-'));
+} else {
+  slide.classList.add(slideОbj.text);
+}
+
+if (slideОbj.text.includes(' ')) {
+  menuIteam.classList.add(slideОbj.text.replace(/ /g, '-'));
+} else {
+  menuIteam.classList.add(slideОbj.text);
+}
+
+ menuIteam.innerText = slideОbj.text;
+
+slide.append(menuIteam);
+return slide;
+}
+
+mainMenu.forEach((slideM, i)=>{
+ mainMenu[i] =  createSliderMenu(slideM);
+})
+
+function createSlider(slideM , style=""){
+    let sliderIteam = document.createElement('div');
+    sliderIteam.classList.add('slider');
+    if (typeof slideM === 'object') {
+      slideM.forEach(elem => {
+        sliderIteam.append(elem);
+      });
+    } else {
+      sliderIteam.append(slideM);
+    }
+    return sliderIteam;
+}
+
+sendAnswer(createSlider(mainMenu).outerHTML, 'sliderMenu');
+
+document.querySelector(".slider").addEventListener("click", (event)=>{
+  let changeIteam = new Event("click" + event.target.classList[1],{bubbles: true});
+  event.target.dispatchEvent(changeIteam);
+});
+
+
+function createBackMenuBtn() {
+  let backBtn = document.createElement("div");
+  backBtn.classList.add("BackMenuBtn");
+  let menuHistory = [];
+  return backBtn;
+}
+
+function changeSlideMenu(newSlider) {
+  $(".slider").slick("unslick");
+  document.querySelector(".slider").remove();
+  document.querySelector(".sliderMenu p .text").append(newSlider);
+  $(".slider").slick({
+    slidesToShow: 3,
+    centerMode: true,
+    variableWidth: true,
+    adaptiveHeight: false
+  });
+  document.querySelector(".sliderMenu").prepend(createBackMenuBtn());
+}
+
+document.addEventListener("clickLicense", ()=>{
+  changeSlideMenu(createSlider(Level2));
 });

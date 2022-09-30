@@ -39,8 +39,9 @@ body .background {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url(./img/background.jpg);
-  background-size: 100%;
+  background: url(./img/BG.jpeg) no-repeat;
+  background-size: 140%;
+  background-position: center;
   opacity: 0.2;
 }
 
@@ -255,18 +256,21 @@ main {
   right: auto;
 }
 
-.messege.keyboard p {
+.messege.keyboard p,
+.messege.sliderMenu p {
   background: none;
   box-shadow: none;
 }
 
 .messege.in,
-.ful-width {
+.messege.ful-width,
+.messege.sliderMenu {
   justify-content: center;
   width: 100%;
 }
 
-.messege.ful-width p {
+.messege.ful-width p,
+.messege.sliderMenu p{
   display: flex;
   justify-content: center;
   width: 100%;
@@ -275,7 +279,8 @@ main {
   box-shadow: none;
 }
 
-.messege.ful-width p .text{
+.messege.ful-width p .text,
+.messege.sliderMenu p .text{
   display: flex;
  width: 100%;
  justify-content: center;
@@ -744,7 +749,6 @@ input#notyfi {
 .slick-slider{
   width: 55vw;
   align-self: center;
-  margin-top: 40vh;
 }
 
 .slick-track{
