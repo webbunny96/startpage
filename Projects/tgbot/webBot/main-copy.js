@@ -847,7 +847,7 @@ function changeSlideMenu(newSlider) {
 }
 let flagIteam = [];
 
-function createFlagMenu(text = 'Australi') {
+function createFlagMenu(text = 'Australia') {
   let temp = document.createElement('div');
   for (let i = 1; i < 10; i++) {
     let flagName = document.createElement('h3');
