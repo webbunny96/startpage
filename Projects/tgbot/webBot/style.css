@@ -911,7 +911,6 @@ input#notyfi {
 
 .userBox .user h3{
   color: #fff;
- font-size: 15vw; 
 }
 
 .additionally{
@@ -949,6 +948,12 @@ input#notyfi {
   .slick-slider{
     width: 90vw;
   }
+
+  .userBox .user h3{
+    color: #fff;
+    font-size: 10px;
+  }
+
 }
 
 
