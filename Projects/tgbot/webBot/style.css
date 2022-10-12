@@ -207,6 +207,7 @@ main {
   overflow-x: hidden;
   padding-top: 80px;
   padding-bottom: 50px;
+  margin-top: -40px;
 }
 
 .messege {
@@ -237,6 +238,7 @@ main {
 
 .messege > p > .time,
 .messege > p > .status {
+  display: none;
   font-size: 12px;
   vertical-align: sub;
   opacity: 0.8;
@@ -944,7 +946,7 @@ input#notyfi {
   margin: 20px;
   opacity: 0.7;
   transition: 1;
-  z-index: 1;
+  z-index: 2;
 }
 
 .additionally .flagMenu h3 {
@@ -952,7 +954,7 @@ input#notyfi {
   width: 100%;
   position: absolute;
   justify-content: center;
-  z-index: 0;
+  z-index: -1;
   transition: 1s;
   top: 0;
   text-align: center;
