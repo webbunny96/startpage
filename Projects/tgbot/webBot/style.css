@@ -980,6 +980,9 @@ input#notyfi {
     font-size: 10px;
   }
 
+  .additionally.__active{
+    height: 500px;
+  }
 }
 
 
