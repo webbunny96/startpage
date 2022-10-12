@@ -911,6 +911,7 @@ input#notyfi {
 
 .userBox .user h3{
   color: #fff;
+  text-align: center;
 }
 
 .additionally{
@@ -932,11 +933,35 @@ input#notyfi {
 
 .additionally .flagMenu{
   display: flex;
+  position: relative;
   min-width: 100px;
+  min-height: 100px;
+  width: 100px;
   height: 100px;
+  max-width: 100px;
+  max-height: 100px;
   margin: 20px;
   opacity: 0.7;
   transition: 1;
+  z-index: 1;
+}
+
+.additionally .flagMenu h3 {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  z-index: 0;
+  transition: 1s;
+  top: 0;
+  text-align: center;
+  margin: auto;
+  opacity: 0;
+}
+
+.additionally .flagMenu:hover h3 {
+ top: 100px;
+ opacity: 1;
 }
 
 .additionally .flagMenu:hover{

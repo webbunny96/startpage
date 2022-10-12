@@ -18,9 +18,9 @@ import logging
 
 chatId = []
 
-game_short_name = "hkjhgkgj_menu_bot"
+game_short_name = "FX_B2B_Hub_bot_Menu"
 # Объект бота
-bot = Bot(token = config.BOT_TOKEN, parse_mode=types.ParseMode.HTML)
+bot = Bot(token = "5786180751:AAE9I-wXks3dQWP4iL7aUEJ43fK9tEsMjIk", parse_mode=types.ParseMode.HTML)
 # Диспетчер для бота
 dp = Dispatcher(bot)
 # Включаем логирование, чтобы не пропустить важные сообщения

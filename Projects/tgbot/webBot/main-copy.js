@@ -866,6 +866,7 @@ function createFlagMenu(text = 'Australi') {
     });
 
     flag.append(img);
+    flag.append(flagName);
     flagIteam.push(flag);
     temp.append(flag);
   }
