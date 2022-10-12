@@ -993,6 +993,7 @@ input#notyfi {
 
   .modal.window .post section iframe{
     width: 90vw !important;
+    height: 25vh !important;
     margin: 0;
     padding: 0;
   }
