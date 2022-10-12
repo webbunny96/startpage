@@ -17,11 +17,12 @@ if (getHistory('History') != null) {
   loadMess(messList);
 }
 
-function createMessage(messText, User = 'out') {
+function createMessage(messText, User = 'out', messHeader = '') {
   let mess = {
     id: '',
     user: User,
     text: messText,
+    headerText: messHeader,
     time: '',
     status: '',
   };
@@ -52,7 +53,6 @@ sendBtn.addEventListener('click', btn => {
     saveHistory(messList);
   }
 });
-
 
 function loadMess(arr) {
   if (arr.length != 0) {
@@ -85,6 +85,9 @@ function loadMess(arr) {
 function reloadMessBox() {
   if (messList.length != 0) {
     tempMess = document.createElement('div');
+
+    headerMess = document.createElement('h2');
+    headerMess.classList.add('headerMess');
     tempMess.classList.add('messege');
     tempMess.classList.add(messList[messList.length - 1].user);
 
@@ -95,6 +98,11 @@ function reloadMessBox() {
     time.classList.add('time');
     let status = document.createElement('span');
     status.classList.add('status');
+
+    headerMess.innerHTML = messList[messList.length - 1].headerText;
+
+    let additionally = document.createElement('div');
+    additionally.classList.add('additionally');
 
     text.innerHTML = messList[messList.length - 1].text;
     time.innerHTML = messList[messList.length - 1].time;
@@ -107,12 +115,13 @@ function reloadMessBox() {
     p.append(text);
     p.append(time);
     p.append(status);
-
+    tempMess.append(headerMess);
     tempMess.append(p);
+    tempMess.append(additionally);
 
     messBox.append(tempMess);
 
-    let loadMess = new Event("loadMess",{bubbles: true});
+    let loadMess = new Event('loadMess', { bubbles: true });
     messBox.dispatchEvent(loadMess);
     scrollBottom();
   }
@@ -208,7 +217,7 @@ function saveHistory(iteam) {
 }
 
 function getHistory(iteam) {
-//  return JSON.parse(localStorage.getItem(iteam));
+  //  return JSON.parse(localStorage.getItem(iteam));
 }
 
 function removeHistory(iteam) {
@@ -252,19 +261,46 @@ document.querySelector('.add-file').addEventListener('click', () => {
   );
 });
 
-document.querySelector('.account-information').addEventListener('click', () => {
-  createContextMenu(
-    document.querySelector('.account-information'),
-    '<span style="font-size: 14px;">Бкз звука</span><span style="font-size: 14px;">Добавить</span><span style="font-size: 14px;">Блокировать</span><span style="font-size: 14px;">Удалить</span>',
-    'display: flex; flex-direction: column; white-space: nowrap;  left: -400%; top: 100%; font-size: 14px;',
-  );
-});
+// document.querySelector('.account-information').addEventListener('click', () => {
+//   createContextMenu(
+//     document.querySelector('.account-information'),
+//     '<span style='font-size: 14px;">Бкз звука</span><span style="font-size: 14px;">Добавить</span><span style="font-size: 14px;">Блокировать</span><span style="font-size: 14px;">Удалить</span>',
+//     'display: flex; flex-direction: column; white-space: nowrap;  left: -400%; top: 100%; font-size: 14px;',
+//   );
+// });
 
 function createModal(html) {
   let modal = document.createElement('div');
   modal.classList.add('modal');
   modal.innerHTML = html;
   document.querySelector('body').append(modal);
+}
+
+function createModalWindow(html, Text = '') {
+  if (!document.querySelector('.window')) {
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.classList.add('window');
+    let modalHeader = document.createElement('div');
+    modalHeader.classList.add('modalHeader');
+    let headerText = document.createElement('span');
+    headerText.classList.add('headerText');
+    headerText.innerHTML = Text;
+    modalHeader.append(headerText);
+    let close = document.createElement('span');
+    close.classList.add('close');
+    modalHeader.append(close);
+    modal.append(modalHeader);
+    let post = document.createElement('div');
+    post.classList.add('post');
+    post.innerHTML = html;
+    modal.append(post);
+    document.querySelector('body').append(modal);
+    let createPost = new Event('createPost', {
+      bubbles: true,
+    });
+    document.dispatchEvent(createPost);
+  }
 }
 
 let ContextMenuBool = false;
@@ -305,8 +341,8 @@ function delContextMenu() {
   }
 }
 
-function sendAnswer(text, type = 'in') {
-  createMessage(text, type);
+function sendAnswer(text, type = 'in', header = '') {
+  createMessage(text, type, header);
 }
 
 function listenMessage(text = 'none', func = () => {}) {
@@ -514,9 +550,6 @@ let Level4 = [
   },
 ];
 
-
-
-
 Level4.forEach((keyName, i) => {
   //kategori
   Level4[i] = createSliderMenu(keyName); //kategori
@@ -588,7 +621,6 @@ Level7.forEach((keyName, i) => {
   Level7[i] = createSliderMenu(keyName); //kategori
 });
 
-
 let Level8 = [
   ///kategori
   {
@@ -606,7 +638,6 @@ Level8.forEach((keyName, i) => {
   //kategori
   Level8[i] = createSliderMenu(keyName); //kategori
 });
-
 
 let Level9 = [
   ///kategori
@@ -626,7 +657,10 @@ Level9.forEach((keyName, i) => {
 // let messFijiForexLicense =
 //   '<img src="../menuIcon/FX B2B Hub Telegram mockup - Page 1.jpeg" alt="">Fiji Forex License<br><br>As part of its regulatory responsibilities, the Reserve Bank of Fiji acts as gate-keepers for the respective sectors it supervises.<br>Interested entities who would like to pursue the undertaking of these regulated activities would need to be licensed and/or registered by the Reserve Bank. This applies to the business/activity of: banking (including credit institutions), insurance, restricted foreign exchange dealing, money changer, insurance broker, insurance agent, securities exchange, stock broker, investment advisor, capital raising, credit reporting agency, credit information provider and credit report recipient.<br>The Reserve Bank supervises the Fiji National Provident Fund and the Fiji Development Bank.  The former through the FNPF Act and the latter through the direction of the Minister of Economy under the provisions of the Banking Act.<br>Provided here are the list of licensed entities for the various industries, while a separate section provides the licensing/registration checklists for these different activities.';
 
-sendAnswer('<iframe src="https://www.youtube.com/embed/hS4HVGJduxQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', 'ful-width');
+sendAnswer(
+  '<iframe src="https://www.youtube.com/embed/hS4HVGJduxQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+  'ful-width',
+);
 // sendAnswer('      <div class="slider"><ul>  <li class="slide">License</li><li class="slide">Company formation</li><li class="slide">Bank accounts</li></ul></div>', 'ful-width');
 // sendAnswer("Fiji Forex License<br><br>As part of its regulatory responsibilities, the Reserve Bank of Fiji acts as gate-keepers for the respective sectors it supervises.<br>Interested entities who would like to pursue the undertaking of these regulated activities would need to be licensed and/or registered by the Reserve Bank. This applies to the business/activity of: banking (including credit institutions), insurance, restricted foreign exchange dealing, money changer, insurance broker, insurance agent, securities exchange, stock broker, investment advisor, capital raising, credit reporting agency, credit information provider and credit report recipient.<br>The Reserve Bank supervises the Fiji National Provident Fund and the Fiji Development Bank.  The former through the FNPF Act and the latter through the direction of the Minister of Economy under the provisions of the Banking Act.<br>Provided here are the list of licensed entities for the various industries, while a separate section provides the licensing/registration checklists for these different activities.");
 
@@ -666,7 +700,6 @@ sendAnswer('<iframe src="https://www.youtube.com/embed/hS4HVGJduxQ" title="YouTu
 //   });
 // });
 
-
 // document.querySelector('.Company-formation').addEventListener('click', () => {
 //   sendAnswer(createSlider(Level5).outerHTML, 'keyboard');
 // });
@@ -691,98 +724,257 @@ sendAnswer('<iframe src="https://www.youtube.com/embed/hS4HVGJduxQ" title="YouTu
 //   window.open('https://www.fxb2bhub.com', '_blank');
 // });
 
-$(document).ready(function(){
-  $(".slider").slick({
+$(document).ready(function () {
+  $('.slider').slick({
     slidesToShow: 3,
     centerMode: true,
     variableWidth: true,
-    adaptiveHeight: false
+    adaptiveHeight: false,
   });
 });
 
-document.addEventListener("resize", (event)=>{
-  $(".slider").slick("setPosition");
+document.addEventListener('resize', event => {
+  $('.slider').slick('setPosition');
 });
 
-
-function createSliderMenu(  slideОbj = {
-  text: 'slide',
-  func: ()=>{console.log("not function")}
-},
-style = '',
+function createSliderMenu(
+  slideОbj = {
+    text: 'slide',
+    func: () => {
+      console.log('not function');
+    },
+  },
+  style = '',
 ) {
-let slide = document.createElement('div');
-slide.classList.add('slider__iteam');
-let menuIteam = document.createElement('h3');
-menuIteam.classList.add('menu-iteam');
+  let slide = document.createElement('div');
+  slide.classList.add('slider__iteam');
+  let menuIteam = document.createElement('h3');
+  menuIteam.classList.add('menu-iteam');
 
+  slide.onclick = slideОbj.func;
 
+  if (slideОbj.text.includes(' ')) {
+    slide.classList.add(slideОbj.text.replace(/ /g, '-'));
+  } else {
+    slide.classList.add(slideОbj.text);
+  }
 
-slide.onclick = slideОbj.func;
+  if (slideОbj.text.includes(' ')) {
+    menuIteam.classList.add(slideОbj.text.replace(/ /g, '-'));
+  } else {
+    menuIteam.classList.add(slideОbj.text);
+  }
 
-if (slideОbj.text.includes(' ')) {
-  slide.classList.add(slideОbj.text.replace(/ /g, '-'));
-} else {
-  slide.classList.add(slideОbj.text);
+  menuIteam.innerText = slideОbj.text;
+
+  slide.append(menuIteam);
+  return slide;
 }
 
-if (slideОbj.text.includes(' ')) {
-  menuIteam.classList.add(slideОbj.text.replace(/ /g, '-'));
-} else {
-  menuIteam.classList.add(slideОbj.text);
-}
-
- menuIteam.innerText = slideОbj.text;
-
-slide.append(menuIteam);
-return slide;
-}
-
-mainMenu.forEach((slideM, i)=>{
- mainMenu[i] =  createSliderMenu(slideM);
-})
-
-function createSlider(slideM , style=""){
-    let sliderIteam = document.createElement('div');
-    sliderIteam.classList.add('slider');
-    if (typeof slideM === 'object') {
-      slideM.forEach(elem => {
-        sliderIteam.append(elem);
-      });
-    } else {
-      sliderIteam.append(slideM);
-    }
-    return sliderIteam;
-}
-
-sendAnswer(createSlider(mainMenu).outerHTML, 'sliderMenu');
-
-document.querySelector(".slider").addEventListener("click", (event)=>{
-  let changeIteam = new Event("click" + event.target.classList[1],{bubbles: true});
-  event.target.dispatchEvent(changeIteam);
+mainMenu.forEach((slideM, i) => {
+  mainMenu[i] = createSliderMenu(slideM);
 });
 
+let menuHistory = [];
+
+function createSlider(slideM, style = '') {
+  let sliderIteam = document.createElement('div');
+  sliderIteam.classList.add('slider');
+  if (typeof slideM === 'object') {
+    slideM.forEach(elem => {
+      sliderIteam.append(elem);
+    });
+  } else {
+    sliderIteam.append(slideM);
+  }
+  menuHistory.push(sliderIteam);
+  return sliderIteam;
+}
+
+sendAnswer(createSlider(mainMenu).outerHTML, 'sliderMenu', 'CHOOSE LICENSE');
+
+addListenerClick();
+
+function addListenerClick() {
+  document.querySelector('.slider').addEventListener('click', event => {
+    let changeIteam = new Event('click' + event.target.classList[1], {
+      bubbles: true,
+    });
+    event.target.dispatchEvent(changeIteam);
+  });
+}
 
 function createBackMenuBtn() {
-  let backBtn = document.createElement("div");
-  backBtn.classList.add("BackMenuBtn");
-  let menuHistory = [];
-  return backBtn;
+  if (!document.querySelector('.backMenuBtn')) {
+    let backBtn = document.createElement('div');
+    backBtn.innerHTML = 'Back';
+    backBtn.classList.add('backMenuBtn');
+
+    document.querySelector('.sliderMenu').prepend(backBtn);
+    document.querySelector('.backMenuBtn').addEventListener('click', () => {
+      changeSlideMenu(menuHistory[menuHistory.length - 2]);
+      menuHistory.splice(menuHistory.length - 1);
+      if (menuHistory.length < 2) {
+        document.querySelector('.backMenuBtn').remove();
+      }
+    });
+  }
 }
 
 function changeSlideMenu(newSlider) {
-  $(".slider").slick("unslick");
-  document.querySelector(".slider").remove();
-  document.querySelector(".sliderMenu p .text").append(newSlider);
-  $(".slider").slick({
-    slidesToShow: 3,
-    centerMode: true,
-    variableWidth: true,
-    adaptiveHeight: false
+  $('.slider').slick('unslick');
+  document.querySelector('.slider').remove();
+  document.querySelector('.sliderMenu p .text').append(newSlider);
+
+  createBackMenuBtn();
+  addListenerClick();
+
+  if (document.querySelectorAll('.slider__iteam').length < 4) {
+    $('.slider').slick({
+      slidesToShow: 1,
+      centerMode: true,
+      variableWidth: true,
+      adaptiveHeight: false,
+    });
+  } else {
+    $('.slider').slick({
+      slidesToShow: 3,
+      centerMode: true,
+      variableWidth: true,
+      adaptiveHeight: false,
+    });
+  }
+}
+let flagIteam = [];
+
+function createFlagMenu(text = 'Australi') {
+  let temp = document.createElement('div');
+  for (let i = 1; i < 10; i++) {
+    let flagName = document.createElement('h3');
+    flagName.innerHTML = text;
+    let flag = document.createElement('picture');
+    flag.classList.add('flagMenu');
+
+    let img = document.createElement('img');
+    img.setAttribute('src', './img/flags/flag (' + i + ').png');
+    img.classList.add(text);
+    document.addEventListener('click', event => {
+      let CreateFlagEvent = new Event('click' + event.target.classList[0], {
+        bubbles: true,
+      });
+      event.target.dispatchEvent(CreateFlagEvent);
+    });
+
+    flag.append(img);
+    flagIteam.push(flag);
+    temp.append(flag);
+  }
+  let addFlgs = new Event('addFlgs', {
+    bubbles: true,
   });
-  document.querySelector(".sliderMenu").prepend(createBackMenuBtn());
+  document.dispatchEvent(addFlgs);
+  return temp.innerHTML;
 }
 
-document.addEventListener("clickLicense", ()=>{
+document.addEventListener('clickLicense', () => {
   changeSlideMenu(createSlider(Level2));
+});
+
+document.addEventListener('clickFX-License', elem => {
+  addAdditionally(
+    elem.target.parentElement.parentElement.parentElement.parentElement
+      .parentElement.parentElement.parentElement,
+    createFlagMenu(),
+  );
+  //changeSlideMenu(createSlider(Level3));
+});
+
+document.addEventListener('clickFiji-Forex-License', () => {
+  changeSlideMenu(createSlider(Level4));
+});
+
+document.addEventListener('clickTaxes', () => {
+  createModalWindow(
+    ' Applied to individuals who respond to criteria of tax resident one of which is to be in the country at least 183 days. If an individual is domiciled in the UK, the individual has to impose taxes on worldwide income. Double taxation can be avoided if the corresponding Double Taxation Agreement between jurisdictions is concluded. <br>If an individual is a British resident and has no domicile status, the individual receives a privilege to elude paying tax on foreign income providing that the income is not brought to the UK (remittance). Non-residents pay income tax if it was received in the UK jurisdiction. <br>Income tax<br>Imposed upon salaries, bonuses, pensions, and savings accounts interest. The standard Personal Allowance is £12,570, which is the amount of income you do not have to pay tax on. Your Personal Allowance may be bigger if you claim Marriage',
+    'Tax for individuals ',
+  );
+});
+
+document.addEventListener('createPost', () => {
+  document
+    .querySelector('.modal.window .modalHeader .close')
+    .addEventListener('click', () => {
+      document.querySelector('.modal.window').remove();
+    });
+});
+
+let teamList = [
+  {
+    name: 'AMIRAN AZALADZE',
+    photo: 'amiran',
+    description: ' GENERAL DIRECTOR AND OWNER OF THE COMPANY "FXB2B.HUB"',
+  },
+  {
+    name: 'Alyona White',
+    photo: 'alyona',
+    description: ' Executive Assisttant ',
+  },
+  {
+    name: 'AMIRAN AZALADZE',
+    photo: 'amiran',
+    description: ' GENERAL DIRECTOR AND OWNER OF THE COMPANY "FXB2B.HUB"',
+  },
+];
+
+function createTeamBox(
+  arrTeam = [{ name: 'noName', photo: 'noUrl', description: 'noDescription' }],
+) {
+  let userBox = document.createElement('div');
+  userBox.classList.add('userBox');
+  arrTeam.forEach((userInfo, i) => {
+    let user = document.createElement('div');
+    let userName = document.createElement('h3');
+    userName.innerHTML = userInfo.name;
+    let userPhoto = document.createElement('img');
+    let userPhotoBox = document.createElement('picture');
+    user.classList.add(userInfo.photo);
+    user.classList.add('user');
+    userPhoto.setAttribute(
+      'src',
+      './img/photosTeam/' + userInfo.photo + '.png',
+    );
+    userPhotoBox.append(userPhoto);
+    user.append(userPhotoBox);
+    user.append(userName);
+    userBox.append(user);
+  });
+  return userBox;
+}
+
+sendAnswer(createTeamBox(teamList).outerHTML, 'ful-width', 'MEET THE TEAM');
+let additionallyElem;
+function addAdditionally(clickAdditionallyElem, html = '') {
+  additionallyElem = clickAdditionallyElem.querySelector('.additionally');
+  additionallyElem.innerHTML = html;
+  showHideFlagMenu();
+}
+
+function showHideFlagMenu(){
+  additionallyElem.classList.toggle('__active');
+}
+
+document.addEventListener('clickAustrali', () => {
+  createModalWindow(
+    " <div class='content'>         <h1 class='header'>Australia</h1>           <picture class='c-search'             ><img src='./img/australia/Company search.png' alt='' />             <h3><pre>COMPANY SEARCH</pre></h3></picture           >           <div class='info-country'>             <picture               ><img src='./img/australia/Delivery.png' alt='' />               <h4><pre> Delivery: <span>48-72 hrs</span></pre></h4></picture             >             <picture               ><img src='./img/australia/Price.png' alt='' />               <h4><pre>Price: <span>$4,000.00</span></h4></pre></picture             >             <picture               ><img src='./img/australia/Document.png' alt='' />               <p>                 <b> Documents checklist: </b>                 Passport scan                  (Shareholders, Controllers, Directors)                  / any nationality               </p></picture             >             <picture               ><img src='./img/australia/Payment options.png' alt='' />               <p>                 <b>Payment options: </b>                 Bank wire,                 USDT TRC 20, USDT ERC20,                  Credit/debit card, Cash               </p></picture             >           </div>           <section>                        <h3>Included:<p>             Governmental fees, nominee director, document preparation,             accounting for the first 12 months, legal address, stamp           </p></h3>           <iframe             src='https://www.youtube.com/embed/4UV-p44Nr30'             title='YouTube video player'             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'             allowfullscreen=''             width='560'             height='315'             frameborder='0'           ></iframe>           <h2>HubWiki</h2>           <h3>Why Australia:</h3>           <p>             Australia is the largest country in Oceania which makes it a             suitable country for an entrepreneur to start a business. Australia             has free trade agreements with other countries which allow it to             carry out undisrupted trade. Apart from this, Australia has signed             DTAAs with other countries protecting investors from double             taxation. Any capital accrued in Australia can be repatriated to the             home country. Australia is one of the best places to start a             business, it has a stable business environment, you can easily find             an educated labour force and of course, one of the biggest             advantages is the well-regulated financial sector.           </p><br>           <h3>Who is registering and where it will be listed:</h3>           <p>             IIn the Australia ASIC - Australian Securities and Investments             Commission handles the legal entity registration process. All             registered legal entities can be found online on the company ASIC’s             website.           </p><br>           <h3>Timeline:</h3>           <p>FX B2B Hub can register your company within 24- 48 hrs.</p>           <h3>Requirements:</h3>           <p>             In Australia, foreigners can register, own and manage the company,             however, there is one requirement which can not be avoided, you need             a local director. But, don’t worry, our company will provide you             with nominee director service. Except Australian director here are             other requirements to start a business in Australia like legal             address, secretary, individual registration documents and etc. FX             B2B Hub will handle all these requirements for you. The only             documents that you need to provide are a scanned copy of your             passport, proof of address and our KYC form.           </p><br>           <h3>Taxation:</h3>           <p>             All companies are subject to a federal tax rate of 30% on their taxable income, except for ‘small or medium business’ companies,  which are subject to a reduced tax rate of 25%.  The reduced tax rate applies only to those companies that, together with certain 'connected' entities, fall below the aggregated turnover threshold of AUD 50 million.           </p><br>           <h3>Price (What is included):</h3>           <p>Our price includes all government fees and applications, delivery and charges account and legal address for the next 12 months. You can apply in a convenient way for you, by sending an email, through our social networks, from our websites, messengers or by phone. FX B2B Hub accepts the following payment methods bank wire, a few types is USDT credit or debit cards and cash.              In case you have any extra questions, don't hesitate to contact us 24 hrs 7 days a week.             </p>         </section>         </div>       </div>",
+  );
+  showHideFlagMenu();
+});
+
+document.addEventListener('addFlgs', () => {
+  console.log('addFlag');
+  flagIteam.forEach(flag => {
+    flag.childNodes[0].addEventListener('click', () => {
+
+    });
+  });
 });
