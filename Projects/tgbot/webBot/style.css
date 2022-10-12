@@ -1097,12 +1097,19 @@ input#notyfi {
   flex-wrap: wrap;
   word-wrap: normal;
 }
+
 .modal.window .post .content .c-search {
   flex-direction: column;
   width: 40%;
   word-wrap: none;
+  margin: 0 !important;
 }
-
+.modal.window .post a{
+ display: flex;
+ width: 80%;
+ justify-content: center;
+ height: auto;
+}
 
 .modal.window .post section {
   display: flex;
