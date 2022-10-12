@@ -990,6 +990,10 @@ input#notyfi {
   .additionally.__active{
     height: 700px;
   }
+
+  iframe{
+    width: 90vw;
+  }
 }
 
 
