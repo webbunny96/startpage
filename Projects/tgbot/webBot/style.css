@@ -992,8 +992,8 @@ input#notyfi {
   }
 
   .modal.window .post section iframe{
-    width: 80vw !important;
-    height: 40vh !important;
+    width: 90vw !important;
+    height: 30vh !important;
     margin: 0;
     padding: 0;
   }
