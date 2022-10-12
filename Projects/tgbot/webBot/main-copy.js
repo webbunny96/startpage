@@ -959,6 +959,9 @@ function addAdditionally(clickAdditionallyElem, html = '') {
   additionallyElem = clickAdditionallyElem.querySelector('.additionally');
   additionallyElem.innerHTML = html;
   showHideFlagMenu();
+  additionallyElem.addEventListener("click", ()=>{
+    showHideFlagMenu();
+  });
 }
 
 function showHideFlagMenu(){
