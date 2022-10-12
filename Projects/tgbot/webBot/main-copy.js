@@ -183,6 +183,7 @@ let search = document.querySelector('.search');
 
 searhSpan.addEventListener('click', () => {
   searhTriger.checked = !searhTriger.checked;
+  console.log("work");
 });
 
 searchInput.addEventListener('input', text => {
