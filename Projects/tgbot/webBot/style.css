@@ -70,7 +70,7 @@ header {
   background: #fff;
   z-index: 10;
   transition: width 2s;
-  padding: 20px;
+  padding: 22px;
 }
 
 header h2 {
@@ -79,7 +79,8 @@ header h2 {
 
 header .names > picture {
   display: flex;
-  height: 80px;
+  height: 70px;
+  width: 70px;
   margin: 5px;
 }
 
@@ -198,11 +199,12 @@ main {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+  top: 100px;
   width: 100%;
   bottom: 75px;
   padding-top: 0;
   transition: width 2s;
-  height: 50vh;
+  height: auto;
   overflow-y: scroll;
   overflow-x: hidden;
   padding-top: 80px;
@@ -219,7 +221,7 @@ main {
 }
 
 .messege:nth-child(2){
-  margin-top: 250px;
+  margin-top: 20px;
 }
 
 .messege > p {
