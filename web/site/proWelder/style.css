@@ -28,7 +28,7 @@ img {
 html {
   display: flex;
   justify-content: center;
-  width: 99em;
+  width: 99vw;
 }
 
 body {
@@ -36,7 +36,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 99em;
+  width: 99vw;
   color: #fff;
   background: radial-gradient(
     80.18% 135.13% at 68.33% 19.82%,
