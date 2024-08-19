@@ -1,0 +1,180 @@
+:root {
+  --main-color: #054276;
+  --second-color: #032441;
+  --main-color-site: #b8dcfb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+html{
+    background: var(--main-color-site);
+}
+
+body {
+  display: flex;
+}
+
+aside img.icon {
+  width: 10px;
+  margin: 0 5px;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  max-width: 350px;
+  margin-left: 10%;
+  margin-right: 5%;
+
+  background: var(--main-color);
+  color: #fff;
+}
+
+aside h3 {
+  width: 90%;
+  background: var(--second-color);
+  padding-left: 10%;
+  color: #fff;
+}
+
+aside ul {
+  margin: 20px 0;
+}
+
+aside li {
+  margin-left: 10%;
+}
+
+aside .contacts ul,
+aside .languages ul {
+  list-style: none;
+}
+
+aside .contacts a,
+aside .languages a {
+  text-decoration: none;
+  color: #fff;
+}
+
+aside picture {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+
+aside picture img {
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #000;
+}
+
+aside .languages li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+}
+
+aside .languages div span {
+  width: 120px;
+}
+
+aside .languages div {
+  display: flex;
+  flex-direction: column;
+}
+
+aside .languages .lang-level {
+  display: flex;
+  margin: 5px;
+}
+
+aside .languages .lang-level img {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  margin: 0 2px;
+  border-radius: 100%;
+  border: 1px solid rgba(255, 255, 255, 1); 
+}
+
+aside .languages li:first-child .lang-level img:last-child {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4); 
+}
+
+aside .languages li:last-child .lang-level img:nth-child(5),
+aside .languages li:last-child .lang-level img:nth-child(4) {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4); 
+}
+main{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.header-information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-information img{
+  width: 13px;
+}
+
+section {
+  width: 80%;
+}
+
+section h3{
+  color: #0379e1;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+section h3 .line{
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: #0379e1;
+}
+
+section h3 img {
+  width: 50px;
+  margin: 10px;
+}
+
+
+section > div{
+  display: flex;
+}
+
+section > div  .date{
+  display: flex;
+  width: 50px;
+  margin-right: 50px;
+  align-items: center;
+}
+
+section .name-experience{
+  display: flex;
+  width: 50vw;
+  justify-content: center;
+}
+
+section p{
+  width: 90%;
+  margin-bottom: 100px;
+}
