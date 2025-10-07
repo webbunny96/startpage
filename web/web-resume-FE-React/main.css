@@ -10,12 +10,23 @@
   font-family: 'Hind Siliguri', sans-serif;
 }
 
-html{
-    background: var(--main-color-site);
+html {
+  background: var(--main-color-site);
 }
 
 body {
   display: flex;
+}
+
+/* Стилі для іконок контактів */
+aside .contacts .mob-tel-icon,
+aside .contacts .tg-icon,
+aside .contacts .vb-icon,
+aside .contacts .email-icon {
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  vertical-align: middle;
 }
 
 aside img.icon {
@@ -30,7 +41,6 @@ aside {
   max-width: 350px;
   margin-left: 10%;
   margin-right: 5%;
-
   background: var(--main-color);
   color: #fff;
 }
@@ -55,10 +65,18 @@ aside .languages ul {
   list-style: none;
 }
 
-aside .contacts a,
-aside .languages a {
+aside .contacts a {
   text-decoration: none;
   color: #fff;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+aside .contacts li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 aside picture {
@@ -102,32 +120,34 @@ aside .languages .lang-level img {
   background: #fff;
   margin: 0 2px;
   border-radius: 100%;
-  border: 1px solid rgba(255, 255, 255, 1); 
+  border: 1px solid rgba(255, 255, 255, 1);
 }
 
 aside .languages li:first-child .lang-level img:last-child {
   background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.4); 
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 aside .languages li:last-child .lang-level img:nth-child(5),
 aside .languages li:last-child .lang-level img:nth-child(4) {
   background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.4); 
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
-main{
+
+main {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 70%;
+  margin-right: 5%;
 }
 
-.header-information{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.header-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.header-information img{
+.header-information img {
   width: 13px;
 }
 
@@ -135,7 +155,7 @@ section {
   width: 80%;
 }
 
-section h3{
+section h3 {
   color: #0379e1;
   display: flex;
   flex-wrap: nowrap;
@@ -144,7 +164,7 @@ section h3{
   justify-content: space-between;
 }
 
-section h3 .line{
+section h3 .line {
   display: block;
   height: 1px;
   width: 100%;
@@ -156,25 +176,24 @@ section h3 img {
   margin: 10px;
 }
 
-
-section > div{
+section > div {
   display: flex;
 }
 
-section > div  .date{
+section > div .date {
   display: flex;
   width: 50px;
   margin-right: 50px;
   align-items: center;
 }
 
-section .name-experience{
+section .name-experience {
   display: flex;
   width: 50vw;
   justify-content: center;
 }
 
-section p{
+section p {
   width: 90%;
   margin-bottom: 100px;
 }
