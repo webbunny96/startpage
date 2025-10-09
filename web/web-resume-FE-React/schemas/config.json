@@ -1,0 +1,20 @@
+{
+  "currentSchema": "ukrainian",
+  "availableSchemas": [
+    {
+      "id": "ukrainian",
+      "name": "Українська",
+      "file": "schemas/react.json"
+    },
+    {
+      "id": "english", 
+      "name": "English",
+      "file": "schemas/react.json"
+    },
+    {
+      "id": "custom",
+      "name": "Custom",
+      "file": "schemas/react.json"
+    }
+  ]
+}

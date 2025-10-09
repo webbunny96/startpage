@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "language": "en",
+    "title": "Resume",
+    "favicon": "./img/logo-favicon.ico"
+  },
+  "personal": {
+    "name": "Zaitsev Maksym",
+    "position": "FRONTEND DEVELOPER",
+    "photo": "./img/photo.webp",
+    "location": "Ukraine, Dnipro",
+    "birthDate": "1996-11-10",
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+380979717749",
+        "icon": "bi-telephone",
+        "alt": "phone-icon",
+        "class": "mob-tel-icon",
+        "links": [
+          {"type": "telegram", "icon": "bi-telegram", "alt": "telegram-icon", "class": "tg-icon", "url": "#tg"},
+          {"type": "viber", "icon": "./img/free-icon-viber-160198.png", "alt": "Viber icon", "class": "vb-icon", "url": "#vb"}
+        ]
+      },
+      {
+        "type": "email",
+        "value": "web.bunny96@gmail.com",
+        "icon": "bi-envelope-at",
+        "alt": "Email icon",
+        "class": "email-icon",
+        "url": "mailto:web.bunny96@gmail.com"
+      }
+    ]
+  },
+  "languages": [
+    {
+      "name": "Ukrainian",
+      "level": "C1 - Advanced",
+      "stars": 5
+    },
+    {
+      "name": "English",
+      "level": "B1 - Intermediate",
+      "stars": 3
+    }
+  ],
+  "skills": [
+    "HTML5, CSS3, JS",
+    "React, Vue.js",
+    "TypeScript",
+    "Git",
+    "Webpack",
+    "SASS",
+    "ES6+",
+    "Unit Testing (Jest, Mocha)",
+    "Responsive Design",
+    "Cross-browser Compatibility",
+    "Basic WCAG Compliance"
+  ],
+  "linkTree": [
+    "webbunny.netlify.app",
+    "linkedin.com/in/zaitsev-maksim-07721723a",
+    "github.com/webbunny96"
+  ],
+  "experience": [
+    {
+      "period": "09.2021 - Present",
+      "company": "School of programming and robotics 'Robocode'",
+      "title": "Directions of study:",
+      "items": [
+        "Web development",
+        "JavaScript",
+        "React development"
+      ],
+      "icon": "./img/businessman.png"
+    },
+    {
+      "period": "06.2022 - 09.2024",
+      "company": "TTS Invest",
+      "title": "React Developer",
+      "items": [
+        "Development of web interfaces using React and TypeScript",
+        "Optimization of frontend performance",
+        "Integration with REST APIs and backend systems",
+        "Code review and teamwork in Agile environment"
+      ],
+      "icon": "./img/businessman.png"
+    },
+    {
+      "period": "09.2024 - 09.2025",
+      "company": "State Enterprise 'Information Court Systems'",
+      "title": "React Developer of the Electronic Court Cabinet",
+      "items": [
+        "Development of user interface for the electronic court cabinet",
+        "Implementation of new features and bug fixing",
+        "Work with React, Redux, and REST API",
+        "Collaboration with backend team and UI/UX designers"
+      ],
+      "icon": "./img/businessman.png"
+    }
+  ],
+  "education": [
+    {
+      "period": "09.2012 - 06.2016",
+      "institution": "Nikopol Pedagogical College",
+      "title": "Speciality:",
+      "items": [
+        "Primary school teacher",
+        "Computer science teacher"
+      ],
+      "icon": "./img/graduation-cap.png"
+    },
+    {
+      "period": "09.2016 - 06.2021",
+      "institution": "Kharkiv National University of Radioelectronics",
+      "title": "Speciality:",
+      "items": [
+        "Process automation and computer-integrated technologies",
+        "Electrical engineering",
+        "Microcontroller programming",
+        "Mechanical engineering"
+      ],
+      "icon": "./img/graduation-cap.png"
+    },
+    {
+      "period": "2024 - Present",
+      "institution": "Dnipro University of Technology",
+      "title": "Speciality:",
+      "items": [
+        "Cybersecurity and information protection"
+      ],
+      "icon": "./img/graduation-cap.png"
+    }
+  ],
+  "courses": [
+    {
+      "period": "2020",
+      "institution": "Udemy",
+      "title": "Directions of study:",
+      "items": ["Node.js", "MERN", "TypeScript"],
+      "icon": "./img/online-learning.png"
+    },
+    {
+      "period": "2019",
+      "institution": "Codecademy",
+      "title": "Directions of study:",
+      "items": ["JavaScript", "React.js"],
+      "icon": "./img/online-learning.png"
+    }
+  ],
+  "about": {
+    "text": "My name is Maxim. I have over 7 years of experience in web development. I excel at writing clean and efficient code, and my deep knowledge of various libraries allows me to build multifunctional and optimized applications that are user-friendly and effective. I am passionate about creating scalable and maintainable solutions that meet the highest standards.",
+    "icon": "./img/info.png"
+  }
+}

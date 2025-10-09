@@ -1,63 +1,73 @@
 :root {
   --main-color: #054276;
   --second-color: #032441;
-  --main-color-site: #b8dcfb;
+  --main-color-site: #e8f2fc;
+  --accent-color: #0379e1;
+  --text-dark: #333;
+  --text-light: #fff;
+  --border-radius: 8px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Hind Siliguri', sans-serif;
+  box-sizing: border-box;
 }
 
 html {
   background: var(--main-color-site);
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   display: flex;
+  position: relative;
+  min-height: 100vh;
+  font-family: 'Hind Siliguri', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
 }
 
-/* Стилі для іконок контактів */
-aside .contacts .mob-tel-icon,
-aside .contacts .tg-icon,
-aside .contacts .vb-icon,
-aside .contacts .email-icon {
-  width: 15px;
-  height: 15px;
-  margin: 0 5px;
-  vertical-align: middle;
-}
-
-aside img.icon {
-  width: 15px;
-  margin: 0 5px;
-}
-
+/* ===== Sidebar Styles ===== */
 aside {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 100%;
   max-width: 350px;
-  margin-left: 10%;
-  margin-right: 5%;
+  min-width: 280px;
   background: var(--main-color);
-  color: #fff;
+  color: var(--text-light);
+  padding: var(--spacing-lg) 0;
+  top: 0;
+  height: 100vh;
 }
 
 aside h3 {
   width: 90%;
   background: var(--second-color);
-  padding-left: 10%;
-  color: #fff;
+  padding: var(--spacing-sm) 10%;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.2rem;
 }
 
 aside ul {
-  margin: 20px 0;
+  margin: var(--spacing-md) 0;
+  padding: 0;
 }
 
 aside li {
   margin-left: 10%;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-dark);
 }
 
 aside .contacts ul,
@@ -67,41 +77,101 @@ aside .languages ul {
 
 aside .contacts a {
   text-decoration: none;
-  color: #fff;
+  color: var(--text-dark);
   display: inline-flex;
   align-items: center;
-  margin-right: 10px;
+  margin-right: var(--spacing-sm);
+  transition: var(--transition);
+  padding: var(--spacing-xs) 0;
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
 }
 
 aside .contacts li {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-dark);
 }
 
+/* ===== Icons ===== */
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin: 0 var(--spacing-xs);
+  background-color: var(--main-color);
+  color: var(--text-light);
+  font-size: 20px;
+  border-radius: 50%;
+  vertical-align: middle;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+
+.icon.img {
+  padding: 5px;
+}
+
+
+/* ===== Profile Picture ===== */
 aside picture {
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
-  padding: 30px 0;
+  padding: var(--spacing-lg) 0;
+  margin-bottom: var(--spacing-md);
 }
 
 aside picture img {
   width: 70%;
+  max-width: 200px;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px #000;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
 }
 
+
+/* ===== Languages Section ===== */
 aside .languages li {
+  display: flex;
+  align-items: center;
+  padding-right: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+aside .languages .langName {
+  display: flex;
+  justify-content: flex-start;
+  min-width: 80px;
+  font-weight: 500;
+}
+
+aside .languages #languagesList {
+  width: 100%;
+}
+
+aside .languages #languagesList li div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 10px;
-}
-
-aside .languages div span {
-  width: 120px;
+  width: 100%;
 }
 
 aside .languages div {
@@ -111,89 +181,281 @@ aside .languages div {
 
 aside .languages .lang-level {
   display: flex;
-  margin: 5px;
+  margin: var(--spacing-xs);
 }
 
-aside .languages .lang-level img {
+aside .lang-level > span {
+  display: block;
   width: 10px;
   height: 10px;
-  background: #fff;
+  border: 1px solid var(--accent-color);
+  box-sizing: content-box;
+  border-radius: 50%;
   margin: 0 2px;
-  border-radius: 100%;
-  border: 1px solid rgba(255, 255, 255, 1);
+  transition: var(--transition);
 }
 
-aside .languages li:first-child .lang-level img:last-child {
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+aside .lang-level > .fill {
+  background: var(--accent-color);
 }
 
-aside .languages li:last-child .lang-level img:nth-child(5),
-aside .languages li:last-child .lang-level img:nth-child(4) {
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+aside .lang-level > .empty {
+  background: rgba(255, 255, 255, 0.3);
 }
 
+/* ===== Main Content ===== */
 main {
   display: flex;
   flex-direction: column;
-  width: 70%;
-  margin-right: 5%;
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  flex: 1;
 }
 
 .header-information {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: var(--spacing-md);
+  text-align: center;
 }
 
 .header-information img {
-  width: 13px;
+  width: 16px;
+  height: 16px;
 }
 
+/* ===== Sections ===== */
 section {
-  width: 80%;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: var(--spacing-xl);
+  background: var(--text-light);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
 }
 
 section h3 {
-  color: #0379e1;
+  color: var(--accent-color);
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+  font-size: 1.3rem;
 }
 
 section h3 .line {
   display: block;
-  height: 1px;
+  height: 2px;
   width: 100%;
-  background: #0379e1;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  margin: 0 var(--spacing-sm);
 }
 
 section h3 img {
-  width: 50px;
-  margin: 10px;
+  width: 40px;
+  margin: 0 var(--spacing-sm);
 }
 
 section > div {
   display: flex;
+  margin-bottom: var(--spacing-lg);
+  flex-direction: column;
 }
 
 section > div .date {
   display: flex;
-  width: 50px;
-  margin-right: 50px;
-  align-items: center;
+  width: 100%;
+  margin-right: 0;
+  align-items: flex-start;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: var(--spacing-xs);
+  font-size: 1rem;
 }
 
 section .name-experience {
   display: flex;
-  width: 50vw;
-  justify-content: center;
+  width: 100%;
+  justify-content: flex-start;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.1rem;
+}
+
+section .speciality-experience {
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-dark);
+  font-size: 1rem;
 }
 
 section p {
-  width: 90%;
-  margin-bottom: 100px;
+  width: 100%;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+}
+
+/* ===== Experience Items ===== */
+.experience-item,
+.education-item,
+.course-item {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.experience-item:last-child,
+.education-item:last-child,
+.course-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.experience-item ul,
+.education-item ul,
+.course-item ul {
+  margin: var(--spacing-sm) 0;
+  padding-left: var(--spacing-lg);
+}
+
+.experience-item li,
+.education-item li,
+.course-item li {
+  margin: var(--spacing-xs) 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  aside {
+    max-width: 300px;
+  }
+  
+  main {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  
+  aside {
+    position: relative;
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+    padding: var(--spacing-md) 0;
+  }
+  
+  main {
+    padding: var(--spacing-md) var(--spacing-sm);
+    margin-right: 0;
+  }
+  
+  section {
+    padding: var(--spacing-md);
+  }
+  
+  section > div {
+    flex-direction: column;
+  }
+  
+  section > div .date {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .language-selector {
+    position: absolute;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  
+  aside picture img {
+    width: 60%;
+  }
+  
+  section {
+    padding: var(--spacing-sm);
+  }
+  
+  section h3 {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  section h3 .line {
+    width: 80%;
+    margin: var(--spacing-xs) 0;
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .language-selector {
+    display: none;
+  }
+  
+  html {
+    background: white;
+  }
+  
+  aside {
+    position: relative;
+    height: auto;
+  }
+  
+  section {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
+
+/* ===== Accessibility Improvements ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --main-color: #000080;
+    --second-color: #000000;
+    --accent-color: #0000FF;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+a:focus,
+button:focus,
+select:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(3, 121, 225, 0.2);
 }
